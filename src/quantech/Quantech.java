@@ -5,8 +5,10 @@
  */
 package quantech;
 
+import models.HistoriqueStock;
 import models.PointDeVente;
 import models.Stock;
+import services.ServiceHistoriqueStock;
 import services.ServicePointDeVente;
 import services.ServiceStock;
 
@@ -38,6 +40,15 @@ public class Quantech {
         //System.out.println(ss.afficherStocks());
         //ss.modifierStock(s2);
         //ss.supprimerStock(s2);
+        
+        HistoriqueStock hs = new HistoriqueStock(1,2,3,"2022-02-14",120,"yyyy-M-d");
+        ServiceHistoriqueStock shs = new ServiceHistoriqueStock();
+        HistoriqueStock hs1 = new HistoriqueStock(1,1,2,3,"2022-02-14",100,"yyyy-M-d");
+        
+        //shs.ajouterHistoriqueStock(hs);
+        //System.out.println(shs.afficherHistoriqueStocks());
+        //shs.modifierHistoriqueStock(hs1);
+        //shs.supprimerHistoriqueStock(hs1.getReference());
     }
     
 }
