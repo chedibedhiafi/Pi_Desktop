@@ -5,7 +5,7 @@
  */
 package interfaces;
 
-import modele.Produit;
+import models.Produit;
 
 import java.util.List;
 
@@ -21,8 +21,20 @@ public interface Iproduits {
     //lister
     public List<Produit> afficherProduit();
 
-    //update
+    //updata
     public boolean modifierProduit(Produit p);
+    
+   //recherche
+    public List<Produit> rechercherProduit(String nom);
+    
+    //filtrage
+    public List<Produit> filtrageproduit(int price1,int price2);
+    
+    //triASC
+    public List<Produit> triproduit();
+    
+    //RETRIVE ID 
+    public Produit retriveproduit(int id);
 
     //delete
     public boolean supprimerProduit(Produit p);
