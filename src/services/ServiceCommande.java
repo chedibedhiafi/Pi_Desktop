@@ -27,7 +27,7 @@ import utils.MaConnexion;
 
     @Override
     public boolean ajouterCommande(Commande c) {
-        String request = "INSERT INTO `commande` (`id_commande`,`date_creation`,`date_envoie`)VALUES ("+c.getId_commande()+",'"+c.getDate_creation()+"','"+c.getDate_envoie()+"')";
+        String request = "INSERT INTO `commande` (`id`,`date_creation`,`date_envoie`)VALUES ("+c.getId()+",'"+c.getDate_creation()+"','"+c.getDate_envoie()+"')";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -51,7 +51,7 @@ import utils.MaConnexion;
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                commandes.add(new Commande(rs.getInt("id_commande"),rs.getString("date_creation"),rs.getString("date_envoie")));
+                commandes.add(new Commande(rs.getInt("id"),rs.getDate("date_creation"),rs.getDate("date_envoie")));
             }
 
         } catch (SQLException e) {
@@ -66,7 +66,7 @@ import utils.MaConnexion;
 
     @Override
     public boolean supprimerCommande(Commande c) {
-        String req = "DELETE FROM `commande` WHERE `id_commande` = "+c.getId_commande()+" ";
+        String req = "DELETE FROM `commande` WHERE `id` = "+c.getId()+" ";
 
         try {
             Statement st = cnx.createStatement();
@@ -81,7 +81,7 @@ import utils.MaConnexion;
 
     @Override
     public boolean modifierCommande(Commande c) {
-        String req = "UPDATE `commande` SET `date_creation`='"+c.getDate_creation()+"',`date_envoie`='"+c.getDate_envoie()+"' WHERE `id_commande` = "+c.getId_commande()+" ";
+        String req = "UPDATE `commande` SET `date_creation`='"+c.getDate_creation()+"',`date_envoie`='"+c.getDate_envoie()+"' WHERE `id` = "+c.getId()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -91,6 +91,28 @@ import utils.MaConnexion;
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public Commande retrieveCommande(int id) {
+        Commande c = null;
+
+        String req="SELECT * FROM commande where id = "+id+"";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            if(rs.next()){
+                c=new Commande(rs.getInt("id"),rs.getDate("date_creation"),rs.getDate("date_envoie"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return c;
     }
 
   

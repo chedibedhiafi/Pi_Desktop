@@ -5,60 +5,59 @@
  */
 package models;
 
+import java.sql.Date;
+
 /**
  *
  * @author ASUS
  */
 public class Commande {
-  private int id_commande;
-  private String date_creation;
-  private String date_envoie;
+  private int id;
+  private Date date_creation;
+  private Date date_envoie;
+
+    public Commande(int id, Date date_creation, Date date_envoie) {
+        this.id = id;
+        this.date_creation = date_creation;
+        this.date_envoie = date_envoie;
+    }
+
+    public Commande(Date date_creation, Date date_envoie) {
+        this.date_creation = date_creation;
+        this.date_envoie = date_envoie;
+    }
 
     public Commande() {
     }
 
-    public Commande(int id_commande, String date_creation, String date_envoie) {
-        this.id_commande = id_commande;
-        this.date_creation = date_creation;
-        this.date_envoie = date_envoie;
+    public int getId() {
+        return id;
     }
 
-    public Commande(String date_creation, String date_envoie) {
-        this.date_creation = date_creation;
-        this.date_envoie = date_envoie;
-    }
-
-   
-
-    public int getId_commande() {
-        return id_commande;
-    }
-
-    public String getDate_creation() {
+    public Date getDate_creation() {
         return date_creation;
     }
 
-    public String getDate_envoie() {
+    public Date getDate_envoie() {
         return date_envoie;
     }
 
-    public void setId_commande(int id_commande) {
-        this.id_commande = id_commande;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setDate_creation(String date_creation) {
+    public void setDate_creation(Date date_creation) {
         this.date_creation = date_creation;
     }
 
-    public void setDate_envoie(String date_envoie) {
+    public void setDate_envoie(Date date_envoie) {
         this.date_envoie = date_envoie;
     }
 
     @Override
     public String toString() {
-        return "Commande{" + "id_commande=" + id_commande + ", date_creation=" + date_creation + ", date_envoie=" + date_envoie + '}';
+        return "Commande{" + "id=" + id + ", date_creation=" + date_creation + ", date_envoie=" + date_envoie + '}';
     }
-  
   
     
 }

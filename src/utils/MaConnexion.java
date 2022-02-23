@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author ASUS
  */
 public class MaConnexion {
-     final String URL="jdbc:mysql://127.0.0.1:3306/pidevcrud";
+     final String URL="jdbc:mysql://127.0.0.1:3306/quantech";
     final String USERNAME="root";
     final String PWD="";
     
