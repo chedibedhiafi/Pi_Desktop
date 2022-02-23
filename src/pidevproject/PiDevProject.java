@@ -37,15 +37,15 @@ public class PiDevProject {
         Ivote sv = new ServiceVote();
         //istantiation
         //blog
-        Blog b1= new Blog ("first", "I am first", Date.valueOf("2012-12-12"));
-        Blog b4= new Blog (2, "first", "I am first", Date.valueOf("2012-12-12"));
+        Blog b1= new Blog ("new phones", "Phone sales","We are now selling Iphone11", Date.valueOf("2022-02-02"));
+        //Blog b4= new Blog (2, "first", "I am first", Date.valueOf("2012-12-12"));
         //commentaire
-        Commentaire c1= new Commentaire ("first Comment", Date.valueOf("2012-12-12"), sb.RetrieveBlog(1));      
+        Commentaire c1= new Commentaire ("prix svp", Date.valueOf("2012-12-12"), sb.RetrieveBlog(3));      
         //Commentaire c3= new Commentaire (1, "first Comment", Date.valueOf("2012-12-12"));
-        Commentaire c5= new Commentaire (5,"idk abt this kinda sus", Date.valueOf("2012-12-12"), sb.RetrieveBlog(1));
+        //Commentaire c5= new Commentaire (5,"idk abt this kinda sus", Date.valueOf("2012-12-12"), sb.RetrieveBlog(1));
         //Vote
         Commentaire c3= new Commentaire (3, "I really like this blog", Date.valueOf("2012-12-12"), sb.RetrieveBlog(2));
-        Vote v1 = new Vote(1,c5);
+       // Vote v1 = new Vote(1,c5);
         
         
         
@@ -53,17 +53,17 @@ public class PiDevProject {
         //Ajout blog
         //System.out.println(sb.ajouterBlog(b1));
         //Ajout commentaire
-        //System.out.println(sc.ajouterCommentaire(c5));
+        //System.out.println(sc.ajouterCommentaire(c1));
         //Ajout vote
         //System.out.println(sv.ajouterVote(v1));
         
         //MODIFIER
         //Modifier blog
-        //Blog b2 = new Blog (1,"changed", "changed", Date.valueOf("2012-01-01"));
+        Blog b2= new Blog (4, "out of stock instantly", "PC sales","We ran ou of stock for the product Asus Tuf", Date.valueOf("2022-03-03"));
         //System.out.println("Update\n");
         //System.out.println(sb.modifierBlog(b2));
         //Modifier commentaire
-        Commentaire c2= new Commentaire (3, "I like this blog", Date.valueOf("2012-02-02"), sb.RetrieveBlog(1));
+        Commentaire c2= new Commentaire (9, "prix svp pas privé", Date.valueOf("2012-12-12"), sb.RetrieveBlog(3)); 
         //System.out.println("Update\n");
         //System.out.println(sc.modifierCommentaire(c2));
         //Modifier vote
@@ -74,9 +74,9 @@ public class PiDevProject {
         //DELETE
         //Delete Blog
         //System.out.println("Delete");
-        //System.out.println(sb.supprimerBlog(b4));
+        //System.out.println(sb.supprimerBlog(b2));
         //Delete commentaire
-        //Commentaire c5= new Commentaire (4,"first Comment", Date.valueOf("2012-12-12"), sb.RetrieveBlog(1));
+        Commentaire c5= new Commentaire (7, "Finally, I was really waiting for this product", Date.valueOf("2012-12-12"), sb.RetrieveBlog(3)); 
         //System.out.println("Delete");
         //System.out.println(sc.supprimerCommentaire(c5));
         //Delete vote
@@ -87,7 +87,8 @@ public class PiDevProject {
         //afficher tous les blogs
         //System.out.println(sb.afficherBlogs());
         //System.out.println(sb.TriBlogs());
-        //System.out.println(sb.SearchBlogs("first"));
+        //System.out.println(sb.SearchBlogs("new phones"));
+        //System.out.println(sb.SearchBlogsSub("phone sales")); //recherche by sub (sujet)
         //afficher tous les commentaires
         //System.out.println(sc.afficherCommentaires());
         //System.out.println(sc.TriCommentaires());

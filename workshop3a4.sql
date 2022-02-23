@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 23 fév. 2022 à 15:03
+-- Généré le : mer. 23 fév. 2022 à 15:58
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL,
   `titre` varchar(255) NOT NULL,
+  `sujet` varchar(255) NOT NULL,
   `contenu` text NOT NULL,
   `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,9 +39,9 @@ CREATE TABLE `blog` (
 -- Déchargement des données de la table `blog`
 --
 
-INSERT INTO `blog` (`id`, `titre`, `contenu`, `date`) VALUES
-(1, 'changed', 'changed', '2012-01-01'),
-(2, 'first', 'I am first', '2012-12-12');
+INSERT INTO `blog` (`id`, `titre`, `sujet`, `contenu`, `date`) VALUES
+(3, 'new product', 'PC sales', 'We are selling brand new Asus Tuf', '2022-02-02'),
+(5, 'new phones', 'Phone sales', 'We are now selling Iphone11', '2022-02-02');
 
 -- --------------------------------------------------------
 
@@ -60,8 +61,9 @@ CREATE TABLE `commentaire` (
 --
 
 INSERT INTO `commentaire` (`id`, `contenu`, `date`, `id_blog`) VALUES
-(3, 'I like this blog', '2012-02-02', 1),
-(5, 'idk abt this kinda sus', '2012-12-12', 1);
+(8, 'Finally, I was really patiently waiting for this product', '2012-12-12', 3),
+(9, 'prix svp pas privé', '2012-12-12', 3),
+(10, 'prix svp', '2012-12-12', 3);
 
 -- --------------------------------------------------------
 
@@ -74,28 +76,6 @@ CREATE TABLE `vote` (
   `type` int(11) NOT NULL,
   `id_source` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `vote`
---
-
-INSERT INTO `vote` (`id`, `type`, `id_source`) VALUES
-(5, -1, 3),
-(6, -1, 3),
-(7, -1, 3),
-(8, -1, 3),
-(9, 1, 3),
-(10, 1, 3),
-(11, 1, 3),
-(12, 1, 3),
-(13, -1, 3),
-(14, -1, 3),
-(15, 1, 5),
-(16, 1, 5),
-(17, 1, 5),
-(18, -1, 5),
-(19, -1, 5),
-(20, 1, 5);
 
 --
 -- Index pour les tables déchargées
@@ -129,13 +109,13 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT pour la table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `vote`

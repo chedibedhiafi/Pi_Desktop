@@ -18,36 +18,40 @@ public class Blog {
     
     private int id;
     private String titre;
+    private String sujet;
     private String contenu;
     private Date date;
 
     public Blog() {
     }
-
-    public Blog(String titre, String contenu, Date date) {
+    //Constructor without id
+    public Blog(String titre, String sujet, String contenu, Date date) {
         this.titre = titre;
+        this.sujet = sujet;
         this.contenu = contenu;
-        this.date = date;    
+        this.date = date;
     }
-
-    public Blog(int id, String titre, String contenu, Date date) {
+    //Constructor with id
+    public Blog(int id, String titre, String sujet, String contenu, Date date) {
         this.id = id;
         this.titre = titre;
+        this.sujet = sujet;
         this.contenu = contenu;
-        this.date = date;     
+        this.date = date;
     }
-
-    
-     
-    
+    //GETTERS
     public int getId() {
         return id;
     }
-
+    
     public String getTitre() {
         return titre;
     }
 
+    public String getSujet() {
+        return sujet;
+    }
+    
     public String getContenu() {
         return contenu;
     }
@@ -56,6 +60,8 @@ public class Blog {
         return date;
     }
 
+    
+    //SETTERS
     public void setId(int id) {
         this.id = id;
     }
@@ -63,6 +69,12 @@ public class Blog {
     public void setTitre(String titre) {
         this.titre = titre;
     }
+
+    public void setSujet(String sujet) {
+        this.sujet = sujet;
+    }
+    
+    
 
     public void setContenu(String contenu) {
         this.contenu = contenu;
@@ -74,11 +86,9 @@ public class Blog {
 
     @Override
     public String toString() {
-        return "Blog{" + "id=" + id + ", titre=" + titre + ", contenu=" + contenu + ", date=" + date + '}';
+        return "Blog{" + "id=" + id + ", titre=" + titre + ", sujet=" + sujet + ", contenu=" + contenu + ", date=" + date + '}';
     }
-    
-    
-    
+
     
     
 }
