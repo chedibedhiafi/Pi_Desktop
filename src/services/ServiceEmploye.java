@@ -6,13 +6,17 @@
 package services;
 
 import interfaces.Iemploye;
+import interfaces.IpointDeVente;
+import interfaces.Iutilisateur;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import models.Employe;
+import models.Utilisateur;
 import utils.MaConnexion;
 
 /**
@@ -22,10 +26,16 @@ import utils.MaConnexion;
 public class ServiceEmploye implements Iemploye{
     
     Connection cnx = MaConnexion.getInstance().getCnx();
+    Iutilisateur su = new ServiceUtilisateur();
+    IpointDeVente sp = new ServicePointDeVente();
 
     @Override
-    public boolean ajouterEmploye(Employe e) {
-        String request = "INSERT INTO `employe`(`login`,`mdp`,`date_naissance`,`nom`, `prenom`, `email`, `role`) VALUES ('"+e.getLogin()+"','"+e.getMdp()+"','"+e.getDate_naissance()+"','"+e.getNom()+"','"+e.getPrenom()+"','"+e.getEmail()+"','"+e.getRole()+"') ";
+        public boolean ajouterEmploye(Employe e) {
+        
+        if(su.ajouterUtilisateur(e).getId()==0)
+            return false;
+                
+        String request = "INSERT INTO `employe`(`id`,`role`,`id_pointdevente`) VALUES ("+e.getId()+",'"+e.getRole()+"',"+e.getPdv().getReference()+") ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -41,7 +51,7 @@ public class ServiceEmploye implements Iemploye{
     public List<Employe> afficherEmployes() {
         List<Employe> employes = new ArrayList<Employe>();
 
-        String req="SELECT * FROM employe";
+        String req="SELECT * FROM employe RIGHT JOIN utilisateur on employe.id = utilisateur.id";
         Statement st = null;
         try {
             st = cnx.createStatement();
@@ -49,7 +59,7 @@ public class ServiceEmploye implements Iemploye{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                employes.add(new Employe(rs.getString(8),rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),"yyyy-M-d"));
+                employes.add(new Employe(sp.retrievePointDeVente(rs.getInt("id")),rs.getString("role"),rs.getInt("id"),rs.getString("login"),rs.getString("mdp"),rs.getDate("date_naissance"),rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getInt("tentative"),rs.getDate("unlock_date")));
             }
 
         } catch (SQLException e) {
@@ -62,7 +72,9 @@ public class ServiceEmploye implements Iemploye{
 
     @Override
     public boolean modifierEmploye(Employe e) {
-        String req = "UPDATE `employe` SET `login`='"+e.getLogin()+"',`mdp`='"+e.getMdp()+"',`date_naissance`='"+e.getDate_naissance()+"',`nom`='"+e.getNom()+"',`prenom`='"+e.getPrenom()+"',`email`='"+e.getEmail()+"',`role`='"+e.getRole()+"' WHERE `id` = "+e.getId()+" ";
+        if(!su.modifierUtilisateur(e))
+            return false;
+        String req = "UPDATE `employe` SET `id_pointdevente`="+e.getPdv().getReference()+",`role`='"+e.getRole()+"'";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -80,13 +92,16 @@ public class ServiceEmploye implements Iemploye{
 
         try {
             Statement st = cnx.createStatement();
-            if (st.executeUpdate(req) == 1)
-                return true;
+            if (st.executeUpdate(req) == 1){
+                if(su.supprimerUtilisateur(e))
+                    return true;
+                }
             return false;
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
         }
+        
     }
     
 }

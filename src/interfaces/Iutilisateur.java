@@ -13,7 +13,7 @@ import models.Utilisateur;
  * @author 21694
  */
 public interface Iutilisateur {
-    public boolean ajouterUtilisateur(Utilisateur u);
+    public Utilisateur ajouterUtilisateur(Utilisateur u);
     
     //lister
     public List<Utilisateur> afficherUtilisateurs();
@@ -21,4 +21,10 @@ public interface Iutilisateur {
     public boolean modifierUtilisateur(Utilisateur u);
     
     public boolean supprimerUtilisateur(Utilisateur u);
+    
+    public Utilisateur login(Utilisateur u);
+    
+    public Utilisateur retrieveUtilisateur(int id);
+    
+    
 }
