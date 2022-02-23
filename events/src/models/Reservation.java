@@ -17,24 +17,24 @@ public class Reservation {
    private int       Nb_Places;
     private Date Date_Achat;
     private Double        Total;
-    private int        FK_Event;
+   private Event e;
 
     public Reservation() {
     }
 
-    public Reservation(int Reserv_Id, int Nb_Places, Date Date_Achat, Double Total, int FK_Event) {
+    public Reservation(int Reserv_Id, int Nb_Places, Date Date_Achat, Double Total, Event e) {
         this.Reserv_Id = Reserv_Id;
         this.Nb_Places = Nb_Places;
         this.Date_Achat = Date_Achat;
         this.Total = Total;
-        this.FK_Event = FK_Event;
+        this.e = e;
     }
 
-    public Reservation(int Nb_Places, Date Date_Achat, Double Total, int FK_Event) {
+    public Reservation(int Nb_Places, Date Date_Achat, Double Total, Event e) {
         this.Nb_Places = Nb_Places;
         this.Date_Achat = Date_Achat;
         this.Total = Total;
-        this.FK_Event = FK_Event;
+        this.e = e;
     }
 
     public int getReserv_Id() {
@@ -69,17 +69,18 @@ public class Reservation {
         this.Total = Total;
     }
 
-    public int getFK_Event() {
-        return FK_Event;
+    public Event getE() {
+        return e;
     }
 
-    public void setFK_Event(int FK_Event) {
-        this.FK_Event = FK_Event;
+    public void setE(Event e) {
+        this.e = e;
     }
 
+    
     @Override
     public String toString() {
-        return "Reservation{" + "Reserv_Id=" + Reserv_Id + ", Nb_Places=" + Nb_Places + ", Date_Achat=" + Date_Achat + ", Total=" + Total + ", FK_Event=" + FK_Event + '}';
+        return "Reservation{" + "Reserv_Id=" + Reserv_Id + ", Nb_Places=" + Nb_Places + ", Date_Achat=" + Date_Achat + ", Total=" + Total + ", Evenement=" + e + '}';
     }
     
     

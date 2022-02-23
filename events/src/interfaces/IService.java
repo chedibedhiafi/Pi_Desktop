@@ -6,6 +6,8 @@
 package interfaces;
 
 import java.util.List;
+import models.Event;
+import models.Reservation;
 
 /**
  *
@@ -16,7 +18,8 @@ public interface IService<T> {
     
     public void ajout(T t);
     public void modifier(T t);
-    public void supprimer(int id);
+    public void supprimer(T t);
     public List<T> afficher();
+    public T retrieve(int id);
     
 }
