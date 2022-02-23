@@ -6,7 +6,7 @@
 package interfaces;
 
 import java.util.List;
-import model.Commentaire;
+import models.Commentaire;
 
 /**
  *
@@ -23,5 +23,7 @@ public interface Icommentaire {
     public boolean modifierCommentaire(Commentaire c);
     
     public boolean supprimerCommentaire(Commentaire c);
+    public Commentaire RetrieveCommentaires(int id);
+    public List<Commentaire> TriCommentaires();
     
 }

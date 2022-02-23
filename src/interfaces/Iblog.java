@@ -10,7 +10,7 @@ package interfaces;
  * @author Haroun
  */
 import java.util.List;
-import model.Blog;
+import models.Blog;
 
 /**
  *
@@ -27,5 +27,9 @@ public interface Iblog {
     public boolean modifierBlog(Blog b);
     
     public boolean supprimerBlog(Blog b);
+    
+    public Blog RetrieveBlog(int id);
+    public List<Blog> TriBlogs();
+    public List<Blog> SearchBlogs(String titre);
 }
 
