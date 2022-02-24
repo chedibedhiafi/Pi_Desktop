@@ -6,12 +6,14 @@
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceHistoriqueStock.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/quantech/Quantech.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceStock.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceProduit.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/models/PointDeVente.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/utils/MaConnexion.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/Istock.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/models/HistoriqueStock.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/IpointDeVente.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/IhistoriqueStock.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/models/Stock.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServicePointDeVente.java</file>
         </group>
     </open-files>
 </project-private>

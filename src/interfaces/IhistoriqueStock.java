@@ -20,5 +20,8 @@ public interface IhistoriqueStock {
     
     public boolean modifierHistoriqueStock(HistoriqueStock h);
     
-    public boolean supprimerHistoriqueStock(int reference);
+    public boolean supprimerHistoriqueStock(HistoriqueStock h);
+    
+    public boolean insertInHistoriqueStock(HistoriqueStock h);
+
 }

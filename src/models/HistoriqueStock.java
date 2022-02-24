@@ -5,9 +5,8 @@
  */
 package models;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+import java.sql.Date;
+
 
 /**
  *
@@ -15,82 +14,50 @@ import java.util.Locale;
  */
 public class HistoriqueStock {
     private int reference;
-    private int id_produit;
-    private int id_pointdevente;
-    private int id_employe;
-    private LocalDate date;
+    private Stock stock;
+    private Date date;
     private int quantite;
+    private String reason;
 
     public HistoriqueStock() {
     }
 
-    public HistoriqueStock(int id_produit, int id_pointdevente, int id_employe, LocalDate date, int quantite) {
-        this.id_produit = id_produit;
-        this.id_pointdevente = id_pointdevente;
-        this.id_employe = id_employe;
+    public HistoriqueStock(int reference, Stock stock, Date date, int quantite, String reason) {
+        this.reference = reference;
+        this.stock = stock;
         this.date = date;
         this.quantite = quantite;
-    }
-    
-    public HistoriqueStock(int id_produit, int id_pointdevente, int id_employe, String date, int quantite, String format) {
-        this.id_produit = id_produit;
-        this.id_pointdevente = id_pointdevente;
-        this.id_employe = id_employe;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format , Locale.ENGLISH);
-        LocalDate dateTime = LocalDate.parse(date , formatter);
-        this.date = dateTime;
-        this.quantite = quantite;
+        this.reason = reason;
     }
 
-    public HistoriqueStock(int reference, int id_produit, int id_pointdevente, int id_employe, LocalDate date, int quantite) {
-        this.reference = reference;
-        this.id_produit = id_produit;
-        this.id_pointdevente = id_pointdevente;
-        this.id_employe = id_employe;
+    public HistoriqueStock(Stock stock, Date date, int quantite, String reason) {
+        this.stock = stock;
         this.date = date;
         this.quantite = quantite;
+        this.reason = reason;
     }
-    
-    public HistoriqueStock(int reference, int id_produit, int id_pointdevente, int id_employe, String date, int quantite, String format) {
+
+    public int getReference() {
+        return reference;
+    }
+
+    public void setReference(int reference) {
         this.reference = reference;
-        this.id_produit = id_produit;
-        this.id_pointdevente = id_pointdevente;
-        this.id_employe = id_employe;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format , Locale.ENGLISH);
-        LocalDate dateTime = LocalDate.parse(date , formatter);
-        this.date = dateTime;
-        this.quantite = quantite;
     }
 
-    public int getId_produit() {
-        return id_produit;
+    public Stock getStock() {
+        return stock;
     }
 
-    public void setId_produit(int id_produit) {
-        this.id_produit = id_produit;
+    public void setStock(Stock stock) {
+        this.stock = stock;
     }
 
-    public int getId_pointdevente() {
-        return id_pointdevente;
-    }
-
-    public void setId_pointdevente(int id_pointdevente) {
-        this.id_pointdevente = id_pointdevente;
-    }
-
-    public int getId_employe() {
-        return id_employe;
-    }
-
-    public void setId_employe(int id_employe) {
-        this.id_employe = id_employe;
-    }
-
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -102,24 +69,21 @@ public class HistoriqueStock {
         this.quantite = quantite;
     }
 
-    public int getReference() {
-        return reference;
+    public String getReason() {
+        return reason;
     }
 
-    public void setReference(int reference) {
-        this.reference = reference;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
-    
-    
 
     @Override
     public String toString() {
-        return "HistoriqueStock{" + "reference=" + reference + ", id_produit=" + id_produit + ", id_pointdevente=" + id_pointdevente + ", id_employe=" + id_employe + ", date=" + date + ", quantite=" + quantite + '}';
+        return "HistoriqueStock{" + "reference=" + reference + ", stock=" + stock + ", date=" + date + ", quantite=" + quantite + ", reason=" + reason + '}';
     }
 
-   
     
-    
+
     
     
 }

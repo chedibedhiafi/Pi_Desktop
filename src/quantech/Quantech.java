@@ -5,12 +5,21 @@
  */
 package quantech;
 
+import interfaces.IhistoriqueStock;
+import interfaces.IpointDeVente;
+import interfaces.Iproduits;
+import interfaces.Istock;
+import java.sql.Date;
+import java.time.LocalDate;
 import models.HistoriqueStock;
 import models.PointDeVente;
+import models.Produit;
 import models.Stock;
 import services.ServiceHistoriqueStock;
 import services.ServicePointDeVente;
+import services.ServiceProduit;
 import services.ServiceStock;
+
 
 /**
  *
@@ -22,33 +31,36 @@ public class Quantech {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Iproduits serviceProduit = new ServiceProduit();
+        IpointDeVente serviceDeVente = new ServicePointDeVente();
+        Istock serviceStock = new ServiceStock();
+        IhistoriqueStock serviceHistoriqueStock = new ServiceHistoriqueStock();
         
-        //var
-        PointDeVente p1 = new PointDeVente("theName", "proprio", "adresse", "2022-12-02","yyyy-M-d");
-        ServicePointDeVente sp = new ServicePointDeVente();
-        PointDeVente p2 = new PointDeVente(1,"name", "proprio", "adresse", "2022-12-02","yyyy-M-d");
+        Produit pc = serviceProduit.retriveproduit(2);
+        Produit A51 = serviceProduit.retriveproduit(16);
+        Produit xiaomi = serviceProduit.retriveproduit(17);
+        System.out.println(xiaomi);
         
-        //sp.ajouterPointDeVente(p1);
-        sp.modifierPointDeVente(p2);
-        System.out.println(sp.afficherPointDeVentes());
+        PointDeVente point1 = new PointDeVente(5,"name", "proprietaire", "adresse", Date.valueOf("2022-04-04"));
+        //serviceDeVente.ajouterPointDeVente(point1);
+        point1 = serviceDeVente.retrievePointDeVente(4);
+        System.out.println(serviceDeVente.retrievePointDeVente(4));
         
-        Stock s1 = new Stock(1, 2, 100);
-        ServiceStock ss = new ServiceStock();
-        Stock s2 = new Stock(1, 2, 120);
+        Stock stock1 = new Stock(xiaomi, point1);
+        //serviceStock.ajouterStock(stock1);
+        HistoriqueStock historiqueStock = new HistoriqueStock(stock1, Date.valueOf(LocalDate.now()), -12, "restock");
+        //serviceHistoriqueStock.ajouterHistoriqueStock(historiqueStock);
+        //serviceHistoriqueStock.supprimerHistoriqueStock(historiqueStock);
+        //serviceHistoriqueStock.modifierHistoriqueStock(historiqueStock);
+        //System.out.println(serviceStock.findProduit(A51, 4));
+       
         
-        //ss.ajouterStock(s1);
-        //System.out.println(ss.afficherStocks());
-        //ss.modifierStock(s2);
-        //ss.supprimerStock(s2);
+        PointDeVente point2 = new PointDeVente("Point G", "Hassen", "Soukra, Ariana", Date.valueOf("2000-04-04"));
+        //serviceDeVente.ajouterPointDeVente(point2);
+        System.out.println(serviceDeVente.retrievePointDeVente(6));
+        System.out.println(serviceDeVente.chercherPointDeVente(serviceDeVente.afficherPointDeVentes(), "point g"));
+        System.out.println(serviceHistoriqueStock.insertInHistoriqueStock(historiqueStock));
         
-        HistoriqueStock hs = new HistoriqueStock(1,2,3,"2022-02-14",120,"yyyy-M-d");
-        ServiceHistoriqueStock shs = new ServiceHistoriqueStock();
-        HistoriqueStock hs1 = new HistoriqueStock(1,1,2,3,"2022-02-14",100,"yyyy-M-d");
-        
-        //shs.ajouterHistoriqueStock(hs);
-        //System.out.println(shs.afficherHistoriqueStocks());
-        //shs.modifierHistoriqueStock(hs1);
-        //shs.supprimerHistoriqueStock(hs1.getReference());
     }
     
 }

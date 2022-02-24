@@ -13,12 +13,16 @@ import models.PointDeVente;
  * @author 21694
  */
 public interface IpointDeVente {
-    public boolean ajouterPointDeVente(PointDeVente p);
+    public PointDeVente ajouterPointDeVente(PointDeVente p);
     
     //lister
     public List<PointDeVente> afficherPointDeVentes();
     
     public boolean modifierPointDeVente(PointDeVente p);
     
-    public boolean supprimerPointDeVente(int reference);
+    public boolean supprimerPointDeVente(PointDeVente p);
+    
+    public List<PointDeVente> chercherPointDeVente(List<PointDeVente> initialList ,String input);
+    
+    public PointDeVente retrievePointDeVente(int reference);
 }
