@@ -91,6 +91,54 @@ public class ServiceCatégorie implements Icatégorie{
             return false;
         }
     }
+
+    @Override
+    public List<Catégorie> rechercheCatégorie(String nom) {
+         List<Catégorie> catégories = new ArrayList<Catégorie>();
+                   String req="SELECT * FROM catégorie WHERE nom = '"+nom+"' ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                catégories.add(new Catégorie(rs.getInt("id"),rs.getString("nom")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return catégories;
+        
+    }
+
+    @Override
+    public Catégorie retrivecatégorie(int id) {
+        Catégorie catégorie = null;
+                   String req="SELECT * FROM catégorie WHERE id="+id+" ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            if(rs.next()){
+                catégorie = new Catégorie(rs.getInt("id"),rs.getString("nom"));
+                
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        
+        return catégorie;
+        
+        
+    }
     }
     
 

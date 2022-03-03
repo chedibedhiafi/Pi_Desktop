@@ -6,14 +6,21 @@
 package services;
 
 import interfaces.IService;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 import models.Event;
+import models.Reservation;
 import utils.MaConnexion;
 
 /**
@@ -62,11 +69,11 @@ public class ServiceEvent implements IService<Event> {
     }
 
     @Override
-    public void supprimer(int Event_Id) {
+    public void supprimer(Event e) {
         try {
             String req = "delete from event where event_id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, Event_Id);
+            ps.setInt(1, e.getEvent_Id());
             ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -100,5 +107,31 @@ public class ServiceEvent implements IService<Event> {
         return list;
     }
 
-    
+    @Override
+    public Event retrieve(int id) {
+         Event e = new Event();
+        try {
+            String req ="select * from event WHERE Event_Id ="+id+"";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            
+            if(rs.next()){
+                e.setEvent_Id(rs.getInt(1));
+                e.setDate_Event(rs.getDate("Date_Event"));
+                e.setTitre(rs.getString("Titre"));
+                e.setPrix(rs.getDouble("Prix"));
+                e.setDescription(rs.getString("Image"));
+                e.setDescription(rs.getString("Description"));
+
+                
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return e;
+    }
+
 }
+ 
+    

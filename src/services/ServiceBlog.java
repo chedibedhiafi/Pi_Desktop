@@ -31,7 +31,7 @@ public class ServiceBlog implements Iblog {
 
     @Override
     public boolean ajouterBlog(Blog b) {
-        String request = "INSERT INTO `blog`(`titre`, `contenu`, `date`) VALUES ('"+b.getTitre()+"','"+b.getContenu()+"','"+b.getDate()+"')";
+        String request = "INSERT INTO `blog`(`titre`, `sujet`, `contenu`, `date`) VALUES ('"+b.getTitre()+"','"+b.getSujet()+"','"+b.getContenu()+"','"+b.getDate()+"')";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -57,7 +57,7 @@ public class ServiceBlog implements Iblog {
             // "yyyy-M-d"
             while(rs.next()){
                 
-              blogs.add(new Blog(rs.getInt("id"),rs.getString(2),rs.getString(3),rs.getString(4),"yyyy-M-d" ));
+              blogs.add(new Blog(rs.getInt("id"),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5)));
             }
 
         } catch (SQLException e) {
@@ -70,14 +70,13 @@ public class ServiceBlog implements Iblog {
 
     @Override
     public boolean modifierBlog(Blog b) {
-        String req = "UPDATE `blog` SET `titre`='"+b.getTitre()+"',`contenu`='"+b.getContenu()+"',`date`='"+b.getDate()+"' WHERE `id` = "+b.getId()+" ";
+        String req = "UPDATE `blog` SET `titre`='"+b.getTitre()+"',`sujet`='"+b.getSujet()+"',`contenu`='"+b.getContenu()+"',`date`='"+b.getDate()+"' WHERE `id` = "+b.getId()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
                 return true;
             return false;
         } catch (SQLException e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -95,6 +94,90 @@ public class ServiceBlog implements Iblog {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public Blog RetrieveBlog(int id) {
+        Blog b = null;
+                   String req="SELECT * FROM blog WHERE id="+id+" ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            if(rs.next()){
+                b = new Blog(rs.getInt("id"),rs.getString("titre"),rs.getString("sujet"),rs.getString("contenu"),rs.getDate("date"));
+                
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        
+        return b;
+    }
+
+    @Override
+    public List<Blog> TriBlogs() {
+         List<Blog> blogs = new ArrayList<Blog>();
+
+        String req="SELECT * FROM blog ORDER BY date DESC";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            // "yyyy-M-d"
+            while(rs.next()){
+                
+              blogs.add(new Blog(rs.getInt("id"),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return blogs;
+    }
+
+    @Override
+    public List<Blog> SearchBlogs(String titre) {
+        List<Blog> blogs = new ArrayList<Blog>();
+
+        String req="SELECT * FROM blog WHERE titre= '"+titre+"' ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next()){          
+              blogs.add(new Blog(rs.getInt("id"),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return blogs;
+    }
+
+    @Override
+    public List<Blog> SearchBlogsSub(String sujet) {
+        List<Blog> blogs = new ArrayList<Blog>();
+
+        String req="SELECT * FROM blog WHERE sujet= '"+sujet+"' ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next()){          
+              blogs.add(new Blog(rs.getInt("id"),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return blogs;
     }
 
     

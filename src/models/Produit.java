@@ -12,35 +12,47 @@ package models;
 public class Produit {
     
     private int id ;
+    private Catégorie catégorie;
     private String nom;
     private int prix;
     private String image;
 
     public Produit() {
     }
-    
-    
 
-    public Produit(int id, String nom, int prix, String image) {
+    public Produit(int id, Catégorie catégorie, String nom, int prix, String image) {
         this.id = id;
+        this.catégorie = catégorie;
         this.nom = nom;
         this.prix = prix;
         this.image = image;
     }
+    
+
+   
     
     //ID AUTOINCRIMENT
-    
-     public Produit( String nom, int prix, String image) {
+
+    public Produit(Catégorie catégorie, String nom, int prix, String image) {
+        this.catégorie = catégorie;
         this.nom = nom;
         this.prix = prix;
         this.image = image;
     }
-     
-     //GETTER AND SETTERS
 
+    //GETTER AND SETTERS
     public int getId() {
         return id;
     }
+
+    public Catégorie getCatégorie() {
+        return catégorie;
+    }
+
+  
+
+   
+    
 
     public String getNom() {
         return nom;
@@ -69,13 +81,24 @@ public class Produit {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public void setCatégorie(Catégorie catégorie) {
+        this.catégorie = catégorie;
+    }
+
      
     //affichage
 
     @Override
     public String toString() {
-        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", image=" + image + '}';
+        return "Produit{" + "id=" + id + ", cat\u00e9gorie=" + catégorie + ", nom=" + nom + ", prix=" + prix + ", image=" + image + '}';
     }
+
+    
+
+   
+
+    
     
     
     

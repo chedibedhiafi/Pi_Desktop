@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -20,39 +20,45 @@ public class Commentaire {
     
     private int id;
     private String contenu;
-    private LocalDate date;
+    private Date date;
+    private Blog id_blog;
 
-    public Commentaire(int id, String contenu, String date, String pattern) {
+    public Commentaire() {
+    }
+
+    public Commentaire(int id, String contenu, Date date, Blog id_blog) {
         this.id = id;
         this.contenu = contenu;
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern , Locale.ENGLISH);
-LocalDate dateTime = LocalDate.parse(date , formatter);
-        
-        this.date = dateTime;
+        this.date = date;
+        this.id_blog = id_blog;
     }
 
-    public Commentaire(String contenu, String date, String pattern) {
+    public Commentaire(String contenu, Date date, Blog id_blog) {
         this.contenu = contenu;
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern , Locale.ENGLISH);
-LocalDate dateTime = LocalDate.parse(date , formatter);
-
-        this.date = dateTime;
+        this.date = date;
+        this.id_blog = id_blog;
     }
-
+    
+    
+    //GETTERS
     public int getId() {
         return id;
     }
-
+    
     public String getContenu() {
         return contenu;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
+    public Blog getId_blog() {
+        return id_blog;
+    }
+    
+    
+    //SETTERS
     public void setId(int id) {
         this.id = id;
     }
@@ -61,14 +67,22 @@ LocalDate dateTime = LocalDate.parse(date , formatter);
         this.contenu = contenu;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
+    public void setId_blog(Blog id_blog) {
+        this.id_blog = id_blog;
+    }
+
+    
+    //toString
+
     @Override
     public String toString() {
-        return "Commentaire{" + "id=" + id + ", contenu=" + contenu + ", date=" + date + '}';
+        return "Commentaire{" + "id=" + id + ", contenu=" + contenu + ", date=" + date + ", id_blog=" + id_blog + '}';
     }
+    
     
     
     

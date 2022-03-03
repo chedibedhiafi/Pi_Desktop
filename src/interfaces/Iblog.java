@@ -27,5 +27,10 @@ public interface Iblog {
     public boolean modifierBlog(Blog b);
     
     public boolean supprimerBlog(Blog b);
+    
+    public Blog RetrieveBlog(int id);
+    public List<Blog> TriBlogs();
+    public List<Blog> SearchBlogs(String titre);
+    public List<Blog> SearchBlogsSub(String sujet);
 }
 

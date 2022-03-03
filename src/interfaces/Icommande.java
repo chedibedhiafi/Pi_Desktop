@@ -19,6 +19,8 @@ public interface Icommande {
     //lister
     public List<Commande> afficherCommandes();
     
+    public Commande retrieveCommande(int id);
+            
     public boolean modifierCommande(Commande c);
     
     public boolean supprimerCommande (Commande c);

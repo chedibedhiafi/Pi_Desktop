@@ -11,14 +11,14 @@ import java.sql.Date;
  *
  * @author SOULAYMA
  */
-public class Event {
-    private int Event_Id;
-   private Date Date_Event;
-    private String Titre;
-   private Double Prix;
-    private String Image;
-  private String Description;
-    private int Fk_Reserv;
+  public class Event {
+ private int Event_Id;
+ private Date Date_Event;
+ private String Titre;
+ private Double Prix;
+ private String Image;
+ private String Description;
+ private int Fk_Reserv;
 
     public Event() {
     }

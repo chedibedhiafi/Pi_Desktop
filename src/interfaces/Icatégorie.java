@@ -22,6 +22,12 @@ public interface Icatégorie {
 
     //update
     public boolean modifierCatégorie(Catégorie c);
+    
+    //recherche
+    public List<Catégorie> rechercheCatégorie(String nom);
+    
+    //RETRIVE 
+    public Catégorie retrivecatégorie(int id);
 
     //delete
     public boolean supprimerCatégorie(Catégorie c);

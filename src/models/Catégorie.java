@@ -20,12 +20,16 @@ public class Catégorie {
         this.id = id;
         this.nom = nom;
     }
-    public Catégorie( String nom) {
-        
+
+  //auto
+
+    public Catégorie(String nom) {
         this.nom = nom;
     }
-
     
+
+
+  
     
     public int getId() {
         return id;
@@ -47,6 +51,13 @@ public class Catégorie {
     public String toString() {
         return "Cat\u00e9gorie{" + "id=" + id + ", nom=" + nom + '}';
     }
+
+    
+    
+
+  
+
+   
     
     
     

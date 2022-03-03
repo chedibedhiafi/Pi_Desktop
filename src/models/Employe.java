@@ -68,7 +68,7 @@ public class Employe extends Utilisateur{
 
     @Override
     public String toString() {
-        return "Employe{"+ "id=" + id + ", login=" + login + ", mdp=" + mdp + ", date_naissance=" + date_naissance + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", role=" + role +", id_pointdevente=" + pdv + '}';
+        return "Employe{"+ "id=" + id + ", login=" + login + ", mdp=" + mdp + ", date_naissance=" + date_naissance + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", role=" + role +", point de vente=" + pdv + '}';
     }
 
     

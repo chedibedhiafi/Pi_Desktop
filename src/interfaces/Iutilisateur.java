@@ -26,5 +26,9 @@ public interface Iutilisateur {
     
     public Utilisateur retrieveUtilisateur(int id);
     
+    public boolean modifierMdpParMail(Utilisateur u);
+    
+    public boolean modifierMdp(Utilisateur u);
+    
     
 }

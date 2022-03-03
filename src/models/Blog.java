@@ -7,7 +7,7 @@ package models;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Locale;
 
 /**
@@ -18,52 +18,50 @@ public class Blog {
     
     private int id;
     private String titre;
+    private String sujet;
     private String contenu;
-    private LocalDate date;
+    private Date date;
 
     public Blog() {
     }
-
-    public Blog(String titre, String contenu, String date , String pattern) {
+    //Constructor without id
+    public Blog(String titre, String sujet, String contenu, Date date) {
         this.titre = titre;
+        this.sujet = sujet;
         this.contenu = contenu;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern , Locale.ENGLISH);
-LocalDate dateTime = LocalDate.parse(date , formatter);
-        this.date = dateTime;
-        
+        this.date = date;
     }
-
-    public Blog(int id, String titre, String contenu, String date, String pattern) {
-        // "d MMMM, yyyy"
+    //Constructor with id
+    public Blog(int id, String titre, String sujet, String contenu, Date date) {
         this.id = id;
         this.titre = titre;
+        this.sujet = sujet;
         this.contenu = contenu;
-         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern , Locale.ENGLISH);
-LocalDate dateTime = LocalDate.parse(date , formatter);
-
-        this.date = dateTime;
-        
+        this.date = date;
     }
-
-    
-     
-    
+    //GETTERS
     public int getId() {
         return id;
     }
-
+    
     public String getTitre() {
         return titre;
     }
 
+    public String getSujet() {
+        return sujet;
+    }
+    
     public String getContenu() {
         return contenu;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
+    
+    //SETTERS
     public void setId(int id) {
         this.id = id;
     }
@@ -72,21 +70,25 @@ LocalDate dateTime = LocalDate.parse(date , formatter);
         this.titre = titre;
     }
 
+    public void setSujet(String sujet) {
+        this.sujet = sujet;
+    }
+    
+    
+
     public void setContenu(String contenu) {
         this.contenu = contenu;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return "Blog{" + "id=" + id + ", titre=" + titre + ", contenu=" + contenu + ", date=" + date + '}';
+        return "Blog{" + "id=" + id + ", titre=" + titre + ", sujet=" + sujet + ", contenu=" + contenu + ", date=" + date + '}';
     }
-    
-    
-    
+
     
     
 }

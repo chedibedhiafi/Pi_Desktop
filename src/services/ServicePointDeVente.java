@@ -23,6 +23,7 @@ import utils.MaConnexion;
  *
  * @author 21694
  */
+
 public class ServicePointDeVente implements IpointDeVente{
     
     Connection cnx = MaConnexion.getInstance().getCnx();
@@ -102,7 +103,7 @@ public class ServicePointDeVente implements IpointDeVente{
     public List<PointDeVente> chercherPointDeVente(List<PointDeVente> initialList, String input) {
         List<PointDeVente> strList = initialList.stream()
                            .map( PointDeVente::concat )
-                           .filter(pt -> pt.contains(input))
+                           .filter(pt -> pt.toLowerCase().contains(input.toLowerCase()))
                            .map(pt -> new PointDeVente(Integer.parseInt(pt.split(".@.")[0]),pt.split(".@.")[1],pt.split(".@.")[2],pt.split(".@.")[3],Date.valueOf(pt.split(".@.")[4])))
                            .collect( Collectors.toList() );
         

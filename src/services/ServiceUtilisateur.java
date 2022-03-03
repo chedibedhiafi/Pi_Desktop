@@ -77,6 +77,7 @@ public class ServiceUtilisateur implements Iutilisateur {
             e.printStackTrace();
             return false;
         }
+        
     }
 
     @Override
@@ -106,26 +107,26 @@ public class ServiceUtilisateur implements Iutilisateur {
                 ResultSet rs = st.executeQuery(req);
                 
                 if(!rs.next()){
-                    System.out.println("Veuillez vérifier vos paramètres");
+                    u.setMsg("Veuillez vérifier vos paramètres");
                     return u;
                 }
                 else if (rs.getDate("unlock_date").compareTo(sys) >= 0){
-                    System.out.println("Votre compte a été bloqué et ne se réactivera pas avant le "+newDate);
+                    u.setMsg("Votre compte a été bloqué et ne se réactivera pas avant le "+newDate);
                     return u;
                 }
                 else if(!rs.getString("mdp").equals(u.getMdp())){
-                    System.out.println("Mot de passe incorrect, veuillez réessayer");
                     if(rs.getInt("tentative")==2){        
-                        st.executeUpdate("UPDATE `utilisateur` SET `unlock_date`='"+newDate+"'  , `tentative`= 0");
+                        st.executeUpdate("UPDATE `utilisateur` SET `unlock_date`='"+newDate+"'  , `tentative`= 0 WHERE id = "+rs.getInt("id")+"");
                     }
                     else 
-                        st.executeUpdate("UPDATE `utilisateur` SET `tentative`= `tentative`+1");
+                        st.executeUpdate("UPDATE `utilisateur` SET `tentative`= `tentative`+1 WHERE id = "+rs.getInt("id")+"");
+                    u.setMsg("Mot de passe incorrect, veuillez réessayer");
                     return u;
                 }
                 else{
                     Utilisateur u1 = new Utilisateur(rs.getInt("id"), rs.getString("login"), rs.getString("mdp"), rs.getDate("date_naissance"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),rs.getInt("tentative"),rs.getDate("unlock_date"));
-                    System.out.println("Bienvenue " + u1.getNom()+ " " + u1.getPrenom());
                     st.executeUpdate("UPDATE `utilisateur` SET `tentative`= 0");
+                    u1.setMsg("Bienvenue " + u1.getNom()+ " " + u1.getPrenom());
                     return u1;
                 }
                
@@ -147,7 +148,8 @@ public class ServiceUtilisateur implements Iutilisateur {
             ResultSet rs = st.executeQuery(req);
 
             //SOB HEDHA FI HEDHA
-            if (rs.next()) {
+            if
+                    (rs.next()) {
                 u = new Utilisateur(rs.getInt("id"), rs.getString("login"), rs.getString("mdp"), rs.getDate("date_naissance"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),rs.getInt("tentative"),rs.getDate("unlock_date"));
             }
 
@@ -157,7 +159,35 @@ public class ServiceUtilisateur implements Iutilisateur {
 
         return u;
     }
-    
-    
+
+    @Override
+    public boolean modifierMdpParMail(Utilisateur u) {
+        String req = "UPDATE utilisateur SET `mdp`='" + u.getMdp() + "' WHERE email='" + u.getEmail() + "'";
+        try {
+            Statement st = cnx.createStatement();
+            if (st.executeUpdate(req) == 1) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean modifierMdp(Utilisateur u) {
+        String req = "UPDATE utilisateur SET `mdp`='" + u.getMdp() + "' WHERE id=" + u.getId() + "";
+        try {
+            Statement st = cnx.createStatement();
+            if (st.executeUpdate(req) == 1) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 }

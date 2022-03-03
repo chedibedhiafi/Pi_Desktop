@@ -6,6 +6,8 @@
 package interfaces;
 
 import java.util.List;
+import models.HistoriqueStock;
+import models.Produit;
 import models.Stock;
 
 /**
@@ -23,4 +25,9 @@ public interface Istock {
     
     public boolean supprimerStock(Stock s);
     
+    public Stock retrieveStock(int id_produit, int id_pointDeVente);
+    
+    public Stock retrieveStock(Stock stock);
+    
+    public List<Stock> findProduit(Produit p, int quantite);
 }

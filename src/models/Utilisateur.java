@@ -23,9 +23,20 @@ public class Utilisateur {
     protected String email;
     protected int tentative;
     protected Date unlock_date;
+    protected String msg;
     
 
     public Utilisateur() {
+    }
+    
+    public Utilisateur(int id,String email, String mdp) {
+        this.email = email;
+        this.mdp = encrypt(mdp);
+    }
+    
+    public Utilisateur(String mdp,int id) {
+        this.id = id;
+        this.mdp = encrypt(mdp);
     }
 
     public Utilisateur(String login, String mdp) {
@@ -126,7 +137,13 @@ public class Utilisateur {
         this.unlock_date = unlock_date;
     }
 
-    
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public String getNom() {
         return nom;
