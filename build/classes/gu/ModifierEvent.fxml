@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gu.ModifierEventController">
+   <children>
+      <Pane layoutY="87.0" prefHeight="6.0" prefWidth="700.0" style="-fx-background-color: darkblue;" />
+      <ImageView fitHeight="102.0" fitWidth="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/274843118_465441085213542_6509580333626111551_n.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="10.0" layoutY="104.0" prefHeight="50.0" prefWidth="260.0" text="Modifier Un Evènement">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#4f9ce4" />
+                  <Stop color="#111010" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="206.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/edit-icon-2375785_960_720.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="10.0" layoutY="152.0" prefHeight="145.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <TextField fx:id="titre" prefHeight="25.0" prefWidth="250.0" promptText="Titre" />
+            <TextField fx:id="prix" prefHeight="25.0" prefWidth="189.0" promptText="Prix" />
+            <TextField fx:id="descri" prefHeight="25.0" prefWidth="189.0" promptText="Description" />
+            <DatePicker fx:id="date" prefHeight="25.0" prefWidth="189.0" promptText="Date" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="39.0" fitWidth="78.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/images.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="modifier" layoutX="113.0" layoutY="315.0" minWidth="39.0" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="54.0" text="Modifier">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#4f9ce4" />
+                  <Stop color="#111010" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableevents" layoutX="219.0" layoutY="152.0" prefHeight="214.0" prefWidth="472.0">
+        <columns>
+          <TableColumn fx:id="titreevent" prefWidth="36.0" text="Titre" />
+          <TableColumn fx:id="prixevent" prefWidth="66.0" text="Prix" />
+            <TableColumn fx:id="descrievent" prefWidth="78.0" text="Description" />
+            <TableColumn fx:id="datevent" prefWidth="39.0" text="Date" />
+        </columns>
+      </TableView>
+      <Button fx:id="retour" layoutX="48.0" layoutY="315.0" minWidth="39.0" mnemonicParsing="false" onAction="#retour" prefHeight="32.0" prefWidth="39.0" text="Retour" />
+   </children>
+</AnchorPane>

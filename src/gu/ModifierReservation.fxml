@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gu.ModifierReservationController">
+   <children>
+      <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="300.0">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="103.0" layoutX="1.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/274843118_465441085213542_6509580333626111551_n.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="21.0" layoutY="64.0" text="Modifier Réservation">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#4a6bda" />
+                        <Stop color="#1b1b1b" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="total" layoutX="21.0" layoutY="138.0" promptText="Total" />
+            <TextField fx:id="nbplaces" layoutX="21.0" layoutY="97.0" promptText="Nombres de places" />
+            <Button fx:id="btn" layoutX="156.0" layoutY="299.0" mnemonicParsing="false" onAction="#modifier" text="Modifier">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#5d7ada" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill></Button>
+            <Button fx:id="retour" layoutX="27.0" layoutY="299.0" mnemonicParsing="false" onAction="#retour" text="Retour">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#5d7ada" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill></Button>
+            <DatePicker fx:id="dateachat" layoutX="21.0" layoutY="190.0" promptText="Date Achat" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutX="228.0" layoutY="90.0" prefHeight="200.0" prefWidth="290.0">
+        <columns>
+          <TableColumn fx:id="nb" prefWidth="111.0" text="Nombre de places" />
+          <TableColumn fx:id="totall" prefWidth="60.0" text="total" />
+            <TableColumn fx:id="date" prefWidth="54.0" text="date" />
+        </columns>
+      </TableView>
+      <Pane layoutY="43.0" prefHeight="3.0" prefWidth="777.0" style="-fx-background-color: darkblue;" />
+   </children>
+</AnchorPane>

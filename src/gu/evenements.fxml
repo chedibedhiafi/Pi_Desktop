@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gu.EvenementsController">
+   <children>
+      <Pane layoutY="69.0" prefHeight="5.0" prefWidth="600.0" style="-fx-background-color: darkblue;" />
+      <ImageView fitHeight="78.0" fitWidth="189.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/274843118_465441085213542_6509580333626111551_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="94.0" fitWidth="173.0" layoutX="28.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/offff.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="28.0" layoutY="90.0" text="Evènement1" />
+      <Label layoutX="28.0" layoutY="225.0" text="Evènement2" />
+      <ImageView fitHeight="94.0" fitWidth="144.0" layoutX="28.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/photo-2018-evenements-high-tech_1545926363_600x-585x325.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="183.0" layoutY="115.0" prefHeight="94.0" prefWidth="73.0" text="Description" />
+      <Label layoutX="189.0" layoutY="253.0" prefHeight="80.0" prefWidth="66.0" text="Description" />
+      <Button fx:id="resrv" layoutX="269.0" layoutY="188.0" mnemonicParsing="false" onAction="#reserver" text="Réserver" />
+      <Button fx:id="note" layoutX="350.0" layoutY="188.0" mnemonicParsing="false" onAction="#noter" text="Noter" />
+      <Button fx:id="reserv1" layoutX="274.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Réserver" />
+      <Button fx:id="note2" layoutX="350.0" layoutY="281.0" mnemonicParsing="false" text="Noter" />
+   </children>
+</AnchorPane>
