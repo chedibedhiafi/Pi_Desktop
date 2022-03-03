@@ -15,6 +15,8 @@ import java.util.List;
  */
 public interface Iproduits {
     
+    
+    
      //ajouter
     public boolean ajouterProduit(Produit p);
 
@@ -23,6 +25,9 @@ public interface Iproduits {
 
     //updata
     public boolean modifierProduit(Produit p);
+    
+    //promotion
+       public  Produit calculerPromotion(Produit p);
     
    //recherche
     public List<Produit> rechercherProduit(String nom);

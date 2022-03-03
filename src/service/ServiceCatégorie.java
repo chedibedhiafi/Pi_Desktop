@@ -23,6 +23,7 @@ public class ServiceCatégorie implements Icatégorie{
     
     
     Connection cnx = utils.MaConnexion.getInstance().getCnx();
+    
 
     @Override
     public boolean ajouterCatégorie(Catégorie c) {

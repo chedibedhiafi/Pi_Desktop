@@ -29,11 +29,16 @@ public class ProduitsEtCategorie {
         System.out.println("**********************les produits***********************");
         Icatégorie sc = new ServiceCatégorie();
            // Produit
-       Produit p = new Produit(sc.retrivecatégorie(9),"A51",1000,"phone");
-     Produit p2 = new Produit(13,sc.retrivecatégorie(9),"pc",1400,"pc");
-     Produit p6 = new Produit(sc.retrivecatégorie(9),"A51",1000,"A51");
-     Produit p7 = new Produit(sc.retrivecatégorie(9),"XIOMI",700,"XIOMI");
-     //Produit p8 = new Produit(18,sc.retrivecatégorie(11),"IPHONE",1100,"IPHONE");
+//       Produit p = new Produit(sc.retrivecatégorie(9),"A51",1000,"phone");
+//     Produit p2 = new Produit(13,sc.retrivecatégorie(9),"pc",1400,"pc");
+//     Produit p6 = new Produit(sc.retrivecatégorie(9),"A51",1000,"A51");
+     Produit p7 = new Produit(25,sc.retrivecatégorie(13),"SMARTTV",1700,"SMARTTV",40);
+     Produit p8 = new Produit(18,sc.retrivecatégorie(11),"IPHONE",1100,"IPHONE",10);
+     Produit p9 = new Produit(27,sc.retrivecatégorie(11),"IPHONE13",2200,"IPHONE13",20);
+      Produit p10 = new Produit(28,sc.retrivecatégorie(9),"XBOBX",750,"XBOX",5);
+      Produit p11 = new Produit(48,sc.retrivecatégorie(14),"OMEN",1500,"OMEN",10);
+            Produit p12 = new Produit(56,sc.retrivecatégorie(28),"chedi",1500,"OMEN",10);
+
      
      
        //Produit p5 = new Produit(13,"screen",500,"screens");
@@ -43,19 +48,22 @@ public class ProduitsEtCategorie {
         Iproduits sp = new ServiceProduit();
 
         // AJOUT PRODUIT
-   //System.out.println(sp.ajouterProduit(p8));
+ // System.out.println(sp.ajouterProduit(p12));
+   
+   
+   
 
 
         // MODIFIER
-       Produit p8= new Produit(14,sc.retrivecatégorie(11),"SMARTTV",200,"SMARTTV");
-  //System.out.println("Update\n");
-     // System.out.println(sp.modifierProduit(p8));
+//      Produit p8= new Produit(14,sc.retrivecatégorie(11),"SMARTTV",200,"SMARTTV");
+ // System.out.println("Update\n");
+     // System.out.println(sp.modifierProduit(p7));
         
    
 
         //SUPPRIMER
    // System.out.println("Delete");
-    //System.out.println(sp.supprimerProduit(p8));
+   // System.out.println(sp.supprimerProduit(p10));
     
     //recherche
      //  System.out.println("recherche");
@@ -71,18 +79,15 @@ public class ProduitsEtCategorie {
 
 //retrive id
 //System.out.println("RETRIVE");
-       // System.out.println(sp.retriveproduit(9));
-
- 
- 
-        
-    
-    
+//       System.out.println(sp.retriveproduit(23));
         
                      // AFFICHER Produits
                      System.out.println("Liste Des Produits:");
     System.out.println(sp.afficherProduit());
-        
+    
+    //PROMOTION
+System.out.println(sp.calculerPromotion(p12));
+      
         
         System.out.println("*********************** les catégories************************");
         
@@ -115,12 +120,12 @@ public class ProduitsEtCategorie {
     //System.out.println(sc.supprimerCatégorie(c5));
     
     //RETRIVE
-        System.out.println("RETRIVE");
-        System.out.println(sc.retrivecatégorie(11));
+       // System.out.println("RETRIVE");
+       // System.out.println(sc.retrivecatégorie(11));
      
                       // AFFICHER catégories
-                      System.out.println("Liste Des Catégories:");
-       System.out.println(sc.afficherCatégorie());
+                     // System.out.println("Liste Des Catégories:");
+       //System.out.println(sc.afficherCatégorie());
         
     }
     

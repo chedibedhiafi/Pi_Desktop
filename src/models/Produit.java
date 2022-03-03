@@ -16,28 +16,51 @@ public class Produit {
     private String nom;
     private int prix;
     private String image;
+    private double promotion;
 
     public Produit() {
     }
 
-    public Produit(int id, Catégorie catégorie, String nom, int prix, String image) {
+    public Produit(int id, double promotion) {
+        this.id = id;
+        this.promotion = promotion;
+    }
+    
+
+    public Produit(int id, Catégorie catégorie, String nom, int prix, String image, double promotion) {
         this.id = id;
         this.catégorie = catégorie;
         this.nom = nom;
         this.prix = prix;
         this.image = image;
+        this.promotion = promotion;
+    }   
+
+    public Produit(Catégorie catégorie, String nom, int prix, double promotion) {
+        this.catégorie = catégorie;
+        this.nom = nom;
+        this.prix = prix;
+        this.promotion = promotion;
+    }
+
+    public Produit(int id, Catégorie catégorie, String nom, int prix, double promotion) {
+        this.id = id;
+        this.catégorie = catégorie;
+        this.nom = nom;
+        this.prix = prix;
+        this.promotion = promotion;
     }
     
-
-   
+    
+    
     
     //ID AUTOINCRIMENT
-
-    public Produit(Catégorie catégorie, String nom, int prix, String image) {
+    public Produit(Catégorie catégorie, String nom, int prix, String image, double promotion) {
         this.catégorie = catégorie;
         this.nom = nom;
         this.prix = prix;
         this.image = image;
+        this.promotion = promotion;
     }
 
     //GETTER AND SETTERS
@@ -47,6 +70,10 @@ public class Produit {
 
     public Catégorie getCatégorie() {
         return catégorie;
+    }
+
+    public double getPromotion() {
+        return promotion;
     }
 
   
@@ -86,6 +113,10 @@ public class Produit {
         this.catégorie = catégorie;
     }
 
+    public void setPromotion(double promotion) {
+        this.promotion = promotion;
+    }
+
    
 
     
@@ -94,8 +125,10 @@ public class Produit {
 
     @Override
     public String toString() {
-        return "Produit{" + "id=" + id + ", cat\u00e9gorie=" + catégorie + ", nom=" + nom + ", prix=" + prix + ", image=" + image + '}';
+        return "Produit{" + "id=" + id + ", cat\u00e9gorie=" + catégorie + ", nom=" + nom + ", prix=" + prix + ", image=" + image + ", promotion=" + promotion + '}';
     }
+
+   
 
     
 
