@@ -7,6 +7,7 @@ package interfaces;
 
 import java.util.List;
 import models.Commentaire;
+import models.Vote;
 
 /**
  *
@@ -25,5 +26,6 @@ public interface Icommentaire {
     public boolean supprimerCommentaire(Commentaire c);
     public Commentaire RetrieveCommentaires(int id);
     public List<Commentaire> TriCommentaires();
+    public List<Commentaire> SearchComment(int id_blog);
     
 }

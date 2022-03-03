@@ -26,6 +26,16 @@ public class Commentaire {
     public Commentaire() {
     }
 
+    public Commentaire(String contenu) {
+        this.contenu = contenu;
+    }
+
+    public Commentaire(int id, String contenu) {
+        this.id = id;
+        this.contenu = contenu;
+    }
+    
+
     public Commentaire(int id, String contenu, Date date, Blog id_blog) {
         this.id = id;
         this.contenu = contenu;
@@ -38,6 +48,14 @@ public class Commentaire {
         this.date = date;
         this.id_blog = id_blog;
     }
+
+    public Commentaire(int id, String contenu, Date date) {
+        this.id = id;
+        this.contenu = contenu;
+        this.date = date;
+    }
+    
+    
     
     
     //GETTERS

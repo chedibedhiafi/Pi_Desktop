@@ -39,6 +39,24 @@ public class Blog {
         this.contenu = contenu;
         this.date = date;
     }
+    
+    
+
+    public Blog(String titre, String sujet, String contenu) {
+        this.titre = titre;
+        this.sujet = sujet;
+        this.contenu = contenu;
+    }
+
+    public Blog(int id, String titre, String sujet, String contenu) {
+        this.id = id;
+        this.titre = titre;
+        this.sujet = sujet;
+        this.contenu = contenu;
+    }
+    
+    
+    
     //GETTERS
     public int getId() {
         return id;

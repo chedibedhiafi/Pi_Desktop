@@ -6,14 +6,17 @@
 package pidevproject;
 import interfaces.Iblog;
 import interfaces.Icommentaire;
+import interfaces.Iutilisateur;
 import interfaces.Ivote;
 import java.sql.Connection;
 import java.sql.Date;
 import models.Blog;
 import models.Commentaire;
+import models.Utilisateur;
 import models.Vote;
 import services.ServiceBlog;
 import services.ServiceCommentaire;
+import services.ServiceUtilisateur;
 import services.ServiceVote;
 import utils.MaConnexion;
 //import java.time.LocalDate;
@@ -35,6 +38,7 @@ public class PiDevProject {
         Iblog sb = new ServiceBlog();    
         Icommentaire sc = new ServiceCommentaire();
         Ivote sv = new ServiceVote();
+        Iutilisateur su = new ServiceUtilisateur();
         //istantiation
         //blog
         Blog b1= new Blog ("new phones", "Phone sales","We are now selling Iphone11", Date.valueOf("2022-02-02"));
@@ -98,5 +102,9 @@ public class PiDevProject {
         //System.out.println(sv.afficherVote());  
         //System.out.println(sv.TriVote());
         //System.out.println(sv.SearchVote(5)); //by id_source
+        //Commentaire c69 = new Commentaire(8, "xx", Date.valueOf("2012-12-13"), sb.RetrieveBlog(3))
+        Vote v2 = new Vote (1,sc.RetrieveCommentaires(10) , su.retrieveUtilisateur(5));
+        Utilisateur u1 = new Utilisateur("haroun","haroun",Date.valueOf("2022-02-02"),"haroun","haroun","haroun");
+        System.out.println(sv.ajouterVote(v2));
     }
 }

@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import models.Commentaire;
+import models.Vote;
 import utils.MaConnexion;
 /**
  *
@@ -125,6 +126,23 @@ public class ServiceCommentaire implements Icommentaire {
             ResultSet rs = st.executeQuery(req);
             //SOB HEDHA FI HEDHA
             // "yyyy-M-d"
+            while(rs.next()){               
+              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog"))));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return commentaires;
+    }
+
+    @Override
+    public List<Commentaire> SearchComment(int id_blog) {
+         List<Commentaire> commentaires = new ArrayList<>();
+        String req="SELECT * FROM commentaire WHERE id_blog="+id_blog+"";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
             while(rs.next()){               
               commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog"))));
             }

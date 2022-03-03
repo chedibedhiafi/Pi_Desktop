@@ -16,6 +16,8 @@ import java.util.List;
 import models.Commentaire;
 import models.Vote;
 import utils.MaConnexion;
+import interfaces.Iutilisateur;
+import models.Utilisateur;
 
 /**
  *
@@ -25,11 +27,38 @@ public class ServiceVote implements Ivote{
     //var
     Connection cnx = MaConnexion.getInstance().getCnx();
     Icommentaire interaceCommentaire = new ServiceCommentaire();
+    Iutilisateur su = new ServiceUtilisateur();
     ServiceCommentaire sc = new ServiceCommentaire();
+    
+    
+    @Override
+    public boolean checkVote(Utilisateur u, Commentaire c) {
+        List<Vote> votes = new ArrayList<>();
+        String req="SELECT * FROM vote WHERE id_user="+u.getId()+" and id_source="+c.getId()+"";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next()){               
+              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source")),su.retrieveUtilisateur(rs.getInt("id_user"))));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (votes.isEmpty()) 
+                return true;
+        return false;
+    }
 
     @Override
     public boolean ajouterVote(Vote v) {
-        String request = "INSERT INTO `vote`(`id`, `type`, `id_source`) VALUES ("+v.getId()+","+v.getType()+","+v.getId_source().getId()+")";
+        if (checkVote(v.getId_user(), v.getId_source())==false){
+        
+            System.out.println("vous avez deja voté");
+            return false;
+        }
+        
+        String request = "INSERT INTO `vote`(`id`, `type`, `id_source`, `id_user`) VALUES ("+v.getId()+","+v.getType()+","+v.getId_source().getId()+","+v.getId_user().getId()+")";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -50,7 +79,7 @@ public class ServiceVote implements Ivote{
             st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while(rs.next()){               
-              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source"))));
+              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source")),su.retrieveUtilisateur(rs.getInt("id_user"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -60,7 +89,7 @@ public class ServiceVote implements Ivote{
 
     @Override
     public boolean modifierVote(Vote v) {
-        String req = "UPDATE `vote` SET `type`="+v.getType()+",`id_source`='"+v.getId_source().getId()+"' WHERE `id` = "+v.getId()+" ";
+        String req = "UPDATE `vote` SET `type`="+v.getType()+",`id_source`='"+v.getId_source().getId()+"', `id_user`='"+v.getId_user().getId()+"' WHERE `id` = "+v.getId()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -94,7 +123,7 @@ public class ServiceVote implements Ivote{
             st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while(rs.next()){               
-              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source"))));
+              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source")),su.retrieveUtilisateur(rs.getInt("id_user"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,18 +134,20 @@ public class ServiceVote implements Ivote{
     @Override
     public List<Vote> SearchVote(int id_source) {
         List<Vote> votes = new ArrayList<>();
-        String req="SELECT * FROM vote WHERE id_source='"+id_source+"'";
+        String req="SELECT * FROM vote WHERE id_source="+id_source+"";
         Statement st = null;
         try {
             st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while(rs.next()){               
-              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source"))));
+              votes.add(new Vote(rs.getInt("id"),rs.getInt(2),sc.RetrieveCommentaires(rs.getInt("id_source")), su.retrieveUtilisateur(rs.getInt("id_user"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return votes;
     }
+
+    
     
 }

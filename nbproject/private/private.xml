@@ -3,17 +3,65 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceBlog.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/pidevproject/PiDevProject.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/utils/MaConnexion.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Commentaire.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Vote.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/MainCommentFXMLController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/AjoutCommentaireController.java</file>
             <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Iblog.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Icommentaire.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Icatégorie.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/CommentaireController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Client.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/utils/MaConnexion.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceRate.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Utilisateur.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/mainFX.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Ilivraison.java</file>
             <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceVote.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceCommentaire.java</file>
-            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Blog.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/IhistoriqueStock.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Iproduits.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Produit.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceProduitCommande.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceCommande.java</file>
             <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Ivote.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceCatégorie.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Commentaire.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Commande.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Blog.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/ProduitCommande.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/MainFXMLController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/UpdateBlogController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceBlog.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Icommande.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/IpointDeVente.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/ajoutCommentaire.fxml</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceCommentaire.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceLivraison.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Istock.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Livraison.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceUtilisateur.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Catégorie.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/PointDeVente.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceHistoriqueStock.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceProduit.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceReservation.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Iutilisateur.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Iemploye.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Stock.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/PtdeventeController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/IService.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/HistoriqueStock.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/AjoutBlogController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/pidevproject/PiDevProject.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Event.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceStock.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Rate.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/gui/GestionBlogController.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Iproduitcommande.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServicePointDeVente.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Reservation.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Vote.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/models/Employe.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/interfaces/Icommentaire.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceEmploye.java</file>
+            <file>file:/C:/Users/Haroun/Documents/NetBeansProjects/PiDevProject/src/services/ServiceEvent.java</file>
         </group>
     </open-files>
 </project-private>
