@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class MaConnexion {
     
-    private final String URL="jdbc:mysql://127.0.0.1:3306/quantech";
+    private final String URL="jdbc:mysql://127.0.0.1:3306/quantechmain";
     private final String USERNAME="root";
     private final String PWD="";
     

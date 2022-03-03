@@ -165,22 +165,21 @@ public class ServiceProduit implements Iproduits{
     @Override
     public Produit retriveproduit(int id) {
         Produit produit =  null;
-           String req="SELECT * FROM produits WHERE id = '"+id+"' ";
+           String req="SELECT * FROM produits WHERE `id` = "+id+" ";
         Statement st = null;
         try {
             st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
 
             //SOB HEDHA FI HEDHA
-            while(rs.next()){
-                produit=new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"));
+            if(rs.next()){
+                produit = new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"));
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
+    
         return produit;
         
     }

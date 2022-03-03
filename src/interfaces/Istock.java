@@ -7,6 +7,7 @@ package interfaces;
 
 import java.util.List;
 import models.HistoriqueStock;
+import models.PointDeVente;
 import models.Produit;
 import models.Stock;
 
@@ -30,4 +31,6 @@ public interface Istock {
     public Stock retrieveStock(Stock stock);
     
     public List<Stock> findProduit(Produit p, int quantite);
+    
+    public List<Stock> findStockPointDeVente(PointDeVente pt);
 }

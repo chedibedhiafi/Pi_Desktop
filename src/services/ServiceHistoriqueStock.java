@@ -10,12 +10,18 @@ import interfaces.IpointDeVente;
 import interfaces.Iproduits;
 import interfaces.Istock;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import models.HistoriqueStock;
+import models.PointDeVente;
+import models.Produit;
+import models.Stock;
 import utils.MaConnexion;
 
 /**
@@ -125,6 +131,60 @@ public class ServiceHistoriqueStock implements IhistoriqueStock{
             }
                 
         }
+    }
+
+    @Override
+    public List<HistoriqueStock> getFromStock(Stock s) {
+    List<HistoriqueStock> historiquestocks = new ArrayList<HistoriqueStock>();
+
+        String req="SELECT * FROM historiquestock where id_produit = "+s.getProduit().getId()+" AND id_pointdevente = "+s.getPointdevente().getReference()+"";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                historiquestocks.add(new HistoriqueStock(rs.getInt("reference"),interfaceStock.retrieveStock(rs.getInt("id_produit"), rs.getInt("id_pointdevente")),rs.getDate("date"), rs.getInt("quantite"), rs.getString("reason")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return historiquestocks;
+    }
+    
+    
+
+    @Override
+    public List<Produit> bestSellersThisMonth(Date date) {
+        List<HistoriqueStock> historiquestocks = new ArrayList<HistoriqueStock>();
+        List<Produit> list = new ArrayList<Produit>();
+        //String req="SELECT * FROM historiquestock where WHERE MONTH(dqte) = 1 ";
+        String req1="SELECT id_produit,SUM(quantite) from historiquestock WHERE quantite < 0 AND MONTH(date) = MONTH('"+date+"') GROUP BY id_produit ORDER BY quantite ASC ; ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req1);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                historiquestocks.add(new HistoriqueStock(new Stock (interfaceProduits.retriveproduit(rs.getInt(1)), new PointDeVente()),date, rs.getInt(2), ""));
+                
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        Collections.sort(historiquestocks, (HistoriqueStock o1, HistoriqueStock o2) -> ((int) (o2.getStock().getProduit().getPrix()*0.3)*(-o2.getQuantite())) - ((int) (o1.getStock().getProduit().getPrix()*0.3)*(-o1.getQuantite())));
+        
+        for (HistoriqueStock hist : historiquestocks){
+            list.add(hist.getStock().getProduit());
+        }
+        return list;
     }
     
 }
