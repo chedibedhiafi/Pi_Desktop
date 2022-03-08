@@ -24,6 +24,7 @@ public class Utilisateur {
     protected int tentative;
     protected Date unlock_date;
     protected String msg;
+    protected String etat;
     
 
     public Utilisateur() {
@@ -168,6 +169,15 @@ public class Utilisateur {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+    
 
     @Override
     public String toString() {

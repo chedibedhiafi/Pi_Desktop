@@ -25,4 +25,5 @@ public interface IpointDeVente {
     public List<PointDeVente> chercherPointDeVente(List<PointDeVente> initialList ,String input);
     
     public PointDeVente retrievePointDeVente(int reference);
+    public PointDeVente retrievePointDeVente(String name);
 }

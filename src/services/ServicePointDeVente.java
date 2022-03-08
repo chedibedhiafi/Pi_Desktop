@@ -132,4 +132,27 @@ public class ServicePointDeVente implements IpointDeVente{
 
         return pointdevente;
     }   
+
+    @Override
+    public PointDeVente retrievePointDeVente(String name) {
+        PointDeVente pointdevente = null;
+
+        String req="SELECT * FROM pointdevente WHERE name = "+name+"";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            if(rs.next()){
+                pointdevente = new PointDeVente(rs.getInt("reference"),rs.getString("name"),rs.getString("proprietaire"),rs.getString("adresse"),rs.getDate("date_ouverture"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return pointdevente;
+    }
 }

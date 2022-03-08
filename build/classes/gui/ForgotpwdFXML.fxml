@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@elements/css/SignIn.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ForgotpwdFXMLController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="800.0" fitWidth="600.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="600.0" prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <Text fill="#306b92" layoutX="121.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Text>
+            <TextField fx:id="emailTF" layoutX="168.0" layoutY="333.0" prefHeight="50.0" prefWidth="300.0" promptText="Insérez votre adresse mail">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </TextField>
+            <Button layoutX="231.0" layoutY="610.0" mnemonicParsing="false" onAction="#confirmcode" prefHeight="50.0" prefWidth="175.0" text="Vérifier code" />
+            <ImageView fitHeight="150.0" fitWidth="300.0" layoutX="35.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@elements/images/logo%20pi%203.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="erreurauthdisplay" alignment="CENTER" layoutX="168.0" layoutY="497.0" prefHeight="20.0" prefWidth="300.0" styleClass="messagev" />
+            <PasswordField fx:id="codeTF" layoutX="168.0" layoutY="524.0" prefHeight="50.0" prefWidth="300.0" promptText="Insérez le code de vérification" />
+            <Button layoutX="231.0" layoutY="413.0" mnemonicParsing="false" onAction="#sendcode" prefHeight="50.0" prefWidth="175.0" text="Envoyer code" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

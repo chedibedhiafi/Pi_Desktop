@@ -18,7 +18,7 @@ public interface Iutilisateur {
     //lister
     public List<Utilisateur> afficherUtilisateurs();
     
-    public boolean modifierUtilisateur(Utilisateur u);
+    public Utilisateur modifierUtilisateur(Utilisateur u);
     
     public boolean supprimerUtilisateur(Utilisateur u);
     

@@ -38,7 +38,6 @@ public class PointDeVente {
         this.adresse = adresse;
         this.date_ouverture = date_ouverture;
     }
-
     
     public int getReference() {
         return reference;

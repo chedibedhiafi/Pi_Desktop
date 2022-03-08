@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@elements/css/SignIn.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SignUpFXMLController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="800.0" fitWidth="600.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="600.0" prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="loginTF" layoutX="150.0" layoutY="164.0" prefHeight="40.0" prefWidth="300.0" promptText="Insérez votre login">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </TextField>
+            <Label fx:id="signin" layoutX="350.0" layoutY="51.0" onMouseClicked="#signin" text="Vous avez déja un compte ?" />
+            <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="25.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@elements/images/logo%20pi%203.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="prenomTF" layoutX="150.0" layoutY="237.0" prefHeight="40.0" prefWidth="300.0" promptText="Insérez votre prénom">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="nomTF" layoutX="150.0" layoutY="315.0" prefHeight="40.0" prefWidth="300.0" promptText="Insérez votre nom">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="emailTF" layoutX="150.0" layoutY="541.0" prefHeight="40.0" prefWidth="300.0" promptText="Insérez votre adresse mail">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="dateDP" layoutX="150.0" layoutY="617.0" prefHeight="40.0" prefWidth="300.0" promptText="Insérez votre date de naissance" />
+            <Button layoutX="225.0" layoutY="701.0" mnemonicParsing="false" onAction="#submitBT" prefHeight="50.0" prefWidth="150.0" text="S'inscrire" />
+            <Label fx:id="loginMsg" layoutX="150.0" layoutY="204.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <Label fx:id="prenomMsg" layoutX="150.0" layoutY="277.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <Label fx:id="nomMsg" layoutX="150.0" layoutY="355.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <Label fx:id="mdpMsg" layoutX="150.0" layoutY="429.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <Label fx:id="mdpvMsg" layoutX="150.0" layoutY="502.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <Label fx:id="emailMsg" layoutX="150.0" layoutY="581.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <Label fx:id="dateMsg" layoutX="150.0" layoutY="657.0" prefHeight="17.0" prefWidth="300.0" styleClass="messagev" />
+            <PasswordField fx:id="mdpTF" layoutX="150.0" layoutY="389.0" prefHeight="40.0" prefWidth="300.0" promptText="Insérez votre mot de passe" />
+            <PasswordField fx:id="mdpverifTF" layoutX="150.0" layoutY="463.0" prefHeight="39.0" prefWidth="300.0" promptText="Confirmez votre mot de passe" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -65,18 +65,22 @@ public class ServiceUtilisateur implements Iutilisateur {
     }
 
     @Override
-    public boolean modifierUtilisateur(Utilisateur u) {
+    public Utilisateur modifierUtilisateur(Utilisateur u) {
         String req = "UPDATE `utilisateur` SET `login`='" + u.getLogin() + "',`mdp`='" + u.getMdp() + "',`date_naissance`='" + u.getDate_naissance() + "',`nom`='" + u.getNom() + "',`prenom`='" + u.getPrenom() + "',`email`='" + u.getEmail() + "' WHERE `id` = " + u.getId() + " ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1) {
-                return true;
+                u.setEtat("succes");
+                return u;
             }
-            return false;
+            
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            u.setEtat("echec");
+            return u;
         }
+        u.setEtat("echec");
+        return u;
         
     }
 
