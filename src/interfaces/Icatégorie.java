@@ -28,6 +28,8 @@ public interface Icatégorie {
     
     //RETRIVE 
     public Catégorie retrivecatégorie(int id);
+    
+    public Catégorie retrieveCategorieByNom(String s);
 
     //delete
     public boolean supprimerCatégorie(Catégorie c);

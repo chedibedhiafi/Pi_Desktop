@@ -30,7 +30,7 @@ public class ServicePointDeVente implements IpointDeVente{
 
     @Override
     public PointDeVente ajouterPointDeVente(PointDeVente p) {       
-        String request = "INSERT INTO `pointdevente`(`name`, `proprietaire`, `adresse`, `date_ouverture`) VALUES ('"+p.getName()+"','"+p.getProprietaire()+"','"+p.getAdresse()+"','"+p.getDate_ouverture()+"')";
+        String request = "INSERT INTO `pointdevente`(`name`, `proprietaire`, `adresse`, `date_ouverture`, `longitude`, `latitude`) VALUES ('"+p.getName()+"','"+p.getProprietaire()+"','"+p.getAdresse()+"','"+p.getDate_ouverture()+"','"+p.getLongitude()+"','"+p.getLatitude()+"')";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request, Statement.RETURN_GENERATED_KEYS) == 1){
@@ -59,7 +59,7 @@ public class ServicePointDeVente implements IpointDeVente{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                pointdeventes.add(new PointDeVente(rs.getInt("reference"),rs.getString("name"),rs.getString("proprietaire"),rs.getString("adresse"),rs.getDate("date_ouverture")));
+                pointdeventes.add(new PointDeVente(rs.getInt("reference"),rs.getString("name"),rs.getString("proprietaire"),rs.getString("adresse"),rs.getDate("date_ouverture"),rs.getString("longitude"),rs.getString("latitude")));
             }
 
         } catch (SQLException e) {
@@ -72,7 +72,7 @@ public class ServicePointDeVente implements IpointDeVente{
 
     @Override
     public boolean modifierPointDeVente(PointDeVente p) {
-        String req = "UPDATE `pointdevente` SET `name`='"+p.getName()+"',`proprietaire`='"+p.getProprietaire()+"',`adresse`='"+p.getAdresse()+"',`date_ouverture`='"+p.getDate_ouverture()+"' WHERE `reference` = "+p.getReference()+" ";
+        String req = "UPDATE `pointdevente` SET `name`='"+p.getName()+"',`proprietaire`='"+p.getProprietaire()+"',`adresse`='"+p.getAdresse()+"',`date_ouverture`='"+p.getDate_ouverture()+"',`longitude`='"+p.getLongitude()+"',`latitude`='"+p.getLatitude()+"' WHERE `reference` = "+p.getReference()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -122,7 +122,7 @@ public class ServicePointDeVente implements IpointDeVente{
 
             //SOB HEDHA FI HEDHA
             if(rs.next()){
-                pointdevente = new PointDeVente(rs.getInt("reference"),rs.getString("name"),rs.getString("proprietaire"),rs.getString("adresse"),rs.getDate("date_ouverture"));
+                pointdevente = new PointDeVente(rs.getInt("reference"),rs.getString("name"),rs.getString("proprietaire"),rs.getString("adresse"),rs.getDate("date_ouverture"),rs.getString("longitude"),rs.getString("latitude"));
             }
 
         } catch (SQLException e) {

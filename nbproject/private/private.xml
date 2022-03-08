@@ -4,23 +4,25 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/quantech/Quantech.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/acceuil.fxml</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/recommendedProduct.fxml</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/GestionDuStockController.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceProduit.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/Icommande.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/NavbarFXMLController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/models/PointDeVente.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/utils/MaConnexion.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/Istock.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/mainBackEnd.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/MainBackEndFXMLController.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceHistoriqueStock.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/GestionPointDeVenteController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceProduitCommande.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceRate.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServicePointDeVente.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/models/Produit.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceStock.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/StockProduitController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/EditPointDeVenteFXMLController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/WhoAreWeInterfaceController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceUtilisateur.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/mainFX.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceVote.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/WhoAreWeInterfaceBackController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceLivraison.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/PtdeventeController.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/RecommendedProductController.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/IhistoriqueStock.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/AcceuilController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/MainInterfaceFXMLController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/elements/css/mainStyle1.css</file>
         </group>
     </open-files>
 </project-private>

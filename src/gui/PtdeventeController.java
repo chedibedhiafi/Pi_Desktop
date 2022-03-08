@@ -5,18 +5,14 @@
  */
 package gui;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
+import interfaces.IpointDeVente;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javax.xml.bind.DatatypeConverter;
 import models.PointDeVente;
+import services.ServicePointDeVente;
 
 /**
  * FXML Controller class
@@ -25,42 +21,31 @@ import models.PointDeVente;
  */
 public class PtdeventeController implements Initializable {
 
+    PointDeVente pointDeVente;
+    IpointDeVente interfacePointDeVente = new ServicePointDeVente();
+    
     @FXML
     private Label nameLBL;
     @FXML
-    private Label proprietaireLBL;
-    @FXML
-    private Label date_ouvLBL;
-    
-    private PointDeVente ptdevente;
-    @FXML
-    private ImageView imgIV;
-    @FXML
     private Label idLBL;
     @FXML
-    private Label adressLBL;
-    @FXML
-    private Label modifierBTN;
+    private Label adresseLBL;
+    
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-                // TODO
+        // TODO
     }    
     
-    public void setData(PointDeVente pt){
-        this.ptdevente = pt;
-        this.idLBL.setText(String.valueOf(pt.getReference()));
-        this.nameLBL.setText(pt.getName());
-        this.proprietaireLBL.setText(pt.getProprietaire());
-        this.date_ouvLBL.setText(pt.getDate_ouverture().toString());
-        
-    }
-    
-    public PointDeVente getData(){
-        return ptdevente;
+    void setData(PointDeVente pt){
+        this.pointDeVente = interfacePointDeVente.retrievePointDeVente(pt.getReference());
+        idLBL.setText(String.valueOf(this.pointDeVente.getReference()));
+        nameLBL.setText(this.pointDeVente.getName());
+        adresseLBL.setText(this.pointDeVente.getAdresse());
     }
     
 }
