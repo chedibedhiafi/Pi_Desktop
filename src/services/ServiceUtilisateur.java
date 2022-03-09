@@ -11,6 +11,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import models.Utilisateur;
@@ -115,7 +116,7 @@ public class ServiceUtilisateur implements Iutilisateur {
                     return u;
                 }
                 else if (rs.getDate("unlock_date").compareTo(sys) >= 0){
-                    u.setMsg("Votre compte a été bloqué et ne se réactivera pas avant le "+newDate);
+                    u.setMsg("Votre compte a été bloqué et ne se réactivera pas avant le "+rs.getDate("unlock_date"));
                     return u;
                 }
                 else if(!rs.getString("mdp").equals(u.getMdp())){
@@ -187,6 +188,22 @@ public class ServiceUtilisateur implements Iutilisateur {
             if (st.executeUpdate(req) == 1) {
                 return true;
             }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean banUser(LocalDate unlock_date,int id) {
+        String req = "UPDATE utilisateur SET `unlock_date`='" + Date.valueOf(unlock_date) + "' WHERE id=" + id + "";
+        try {
+            Statement st = cnx.createStatement();
+            if (st.executeUpdate(req) == 1) {
+                return true;
+            }
+            System.out.println("aaaa");
             return false;
         } catch (SQLException e) {
             e.printStackTrace();

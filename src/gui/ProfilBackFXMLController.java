@@ -81,7 +81,7 @@ public boolean afficher(Employe e)
     private void modifier(ActionEvent event) {
         Employe e1 = new Employe(e.getPdv(),e.getRole(),e.getId(),loginTF.getText(),e.getMdp(),Date.valueOf(DateTF.getText()),nomTF.getText(),prenomTF.getText(),EmailTF.getText());
         e1 = se.modifierEmploye(e1);
-        if(e1.getEtat()=="succes")
+        if(e1.getEtat().equals("succes"))
         {
            JOptionPane.showMessageDialog(null, "Votre profil a été modifié"); 
            this.e = e1;

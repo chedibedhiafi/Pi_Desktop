@@ -100,14 +100,14 @@ public class MainInterfaceBackFXMLController implements Initializable {
     }
 
     @FXML
-    private void employesClicked(ActionEvent event) {
+    private void employesClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("EmployesBackFXML.fxml"));
             root = loader.load();
 
            //The following both lines are the only addition we need to pass the arguments
-           UtilisateursBackFXMLController ucb = loader.getController();
-           ucb.setEmploye(e);
+           EmployesBackFXMLController ecb = loader.getController();
+           ecb.setEmploye(e);
            borderpane.setCenter(root);
     }
 

@@ -33,20 +33,28 @@ public class ServiceEmploye implements Iemploye{
         public Employe ajouterEmploye(Employe e) {
         
         if(su.ajouterUtilisateur(e).getId()==0)
+        {
+            e.setEtat("echec");
+            System.out.println("aaaa");
             return e;
-                
+        }
+   
         String request = "INSERT INTO `employe`(`id`,`role`,`id_pointdevente`) VALUES ("+e.getId()+",'"+e.getRole()+"',"+e.getPdv().getReference()+") ";
         try {
             Statement st = cnx.createStatement();
-            if (st.executeUpdate(request, Statement.RETURN_GENERATED_KEYS) == 1) {
-                ResultSet rs = st.getGeneratedKeys();
-                if(rs.next())
-                    e.setId(rs.getInt(1));    
-                }
+            if (st.executeUpdate(request) == 1) 
+            {
+                e.setEtat("succes");
+                System.out.println("aaaa");
+                return e;
+            }   
+                
         } catch (SQLException ex) {
             ex.printStackTrace();
+            e.setEtat("echec");
             return e;
         }
+        e.setEtat("echec");
         return e;
     }
 
@@ -54,7 +62,7 @@ public class ServiceEmploye implements Iemploye{
     public List<Employe> afficherEmployes() {
         List<Employe> employes = new ArrayList<Employe>();
 
-        String req="SELECT * FROM employe RIGHT JOIN utilisateur on employe.id = utilisateur.id";
+        String req="SELECT * FROM employe LEFT JOIN utilisateur on employe.id = utilisateur.id";
         Statement st = null;
         try {
             st = cnx.createStatement();

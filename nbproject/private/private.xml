@@ -3,59 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Icatégorie.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Client.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceVote.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ForgotpwdController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ResetpwdController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ProfilBackFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/MainInterfaceFXMLController.java</file>
             <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/SignInFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceReservation.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Produit.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/DocumentFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/quantech/Quantech.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceLivraison.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceHistoriqueStock.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/NewFXMain.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCommentaire.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceEvent.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/SignUpController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/InputValidation.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Iblog.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceBlog.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Blog.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceProduit.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/NavbarFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Iproduitcommande.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Livraison.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/navbarFXML.fxml</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceUtilisateur.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Commande.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ProfilController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Employe.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Reservation.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Iproduits.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Ivote.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Rate.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceProduitCommande.java</file>
             <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Iutilisateur.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCommande.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Utilisateur.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/IService.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Catégorie.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Icommande.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Event.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceRate.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ChangermdpController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServicePointDeVente.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/MainInterfaceBackFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ProfilFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AjouterEmployeBackFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/quantech/Quantech.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/EmployesBackFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/NewFXMain.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ChangermdpFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/InputValidation.java</file>
             <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/signInFXML.fxml</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Ilivraison.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceStock.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Icommentaire.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServicePointDeVente.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Iemploye.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/UtilisateursBackFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/SignUpFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceUtilisateur.java</file>
             <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceEmploye.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Vote.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCatégorie.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/ProduitCommande.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Commentaire.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ForgotpwdFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ChangermdpBackFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ProfilBackFXML.fxml</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Employe.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/UtilisateursBackFXML.fxml</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AjouterEmployeBackFXML.fxml</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/IpointDeVente.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/PointDeVente.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/EmployesBackFXML.fxml</file>
         </group>
     </open-files>
 </project-private>

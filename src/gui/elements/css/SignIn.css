@@ -131,3 +131,13 @@
 	-fx-underline: false;
 }
 
+.labelsblack{
+	-fx-font: 15px "Arial"; 
+	-fx-text-fill: #000000;
+	-fx-underline: false;
+}
+
+GridPane :hover{
+	-fx-background-color: #a5d4f3;
+}
+

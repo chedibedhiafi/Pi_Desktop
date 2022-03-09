@@ -21,7 +21,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -29,11 +28,14 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import org.apache.commons.io.FileUtils;
 
 /**
@@ -104,16 +106,10 @@ public class ForgotpwdFXMLController implements Initializable {
 
     @FXML
     private void sendcode(ActionEvent event) throws AddressException, MessagingException, IOException {
-        File destination = new File("src/gui/elements/destination.html");
+      
        File htmlTemplateFile = new File("src/gui/elements/template.html");
         String htmlString = FileUtils.readFileToString(htmlTemplateFile);
-        
-        htmlString = htmlString.replace("$passwordReseted", "Reset Password");
-        
-        
-        
-        FileUtils.writeStringToFile(destination, htmlString);
-        
+
         Random rand = new Random();
         randomcode = rand.nextInt(999999-111111)+111111;
         htmlString = htmlString.replace("$verificationCode", String.valueOf(randomcode));
@@ -136,13 +132,19 @@ public class ForgotpwdFXMLController implements Initializable {
         Session session = Session.getDefaultInstance(properties);
 
         Message msg = new MimeMessage(session);
+       //MimeMessageHelper helper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,StandardCharsets.UTF_8.name());
 
         msg.setFrom(new InternetAddress(userName));
         InternetAddress[] toAddresses = { new InternetAddress(toAddress) };
         msg.setRecipients(Message.RecipientType.TO, toAddresses);
         msg.setSubject(subject);
         // set plain text message
-        msg.setText(message);
+        Multipart multipart = new MimeMultipart("related");
+        MimeBodyPart htmlPart = new MimeBodyPart();
+        //add reference to your image to the HTML body <img src="cid:some-image-cid" alt="img" />
+        htmlPart.setText(message, "utf-8", "html");
+        multipart.addBodyPart(htmlPart);
+        msg.setContent(multipart);
 
         Transport t = session.getTransport("smtp");
         t.connect("smtp.gmail.com", userName, password);

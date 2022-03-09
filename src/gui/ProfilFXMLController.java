@@ -94,7 +94,7 @@ public class ProfilFXMLController implements Initializable {
     private void modifier(ActionEvent event) {
         Utilisateur u1 = new Utilisateur(u.getId(),loginTF.getText(),u.getMdp(),Date.valueOf(DateTF.getText()),nomTF.getText(),prenomTF.getText(),EmailTF.getText());
         u1 = su.modifierUtilisateur(u1);
-        if(u1.getEtat()=="succes")
+        if(u1.getEtat().equals("succes"))
         {
             JOptionPane.showMessageDialog(null, "Votre profil a été modifié");
             this.u= u1;

@@ -135,9 +135,9 @@ public class ServicePointDeVente implements IpointDeVente{
 
     @Override
     public PointDeVente retrievePointDeVente(String name) {
-        PointDeVente pointdevente = null;
+        PointDeVente pointdevente = new PointDeVente();
 
-        String req="SELECT * FROM pointdevente WHERE name = "+name+"";
+        String req="SELECT * FROM pointdevente WHERE name = '"+name+"'";
         Statement st = null;
         try {
             st = cnx.createStatement();
