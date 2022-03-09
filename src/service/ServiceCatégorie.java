@@ -140,6 +140,23 @@ public class ServiceCatégorie implements Icatégorie{
         
         
     }
+
+    @Override
+    public Catégorie retrieveCategorieByNom(String s) {
+           Catégorie cat = new Catégorie();
+        String query = "SELECT * FROM catégorie WHERE nom = '" + s + "' ";
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                cat.setId(rs.getInt(1));
+                cat.setNom(rs.getString(2));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return cat;
+    }
     }
     
 

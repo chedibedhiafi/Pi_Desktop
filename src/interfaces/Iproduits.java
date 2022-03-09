@@ -27,7 +27,9 @@ public interface Iproduits {
     public boolean modifierProduit(Produit p);
     
     //promotion
-       public  Produit calculerPromotion(Produit p);
+   public  Produit calculerPromotion(Produit p);
+   
+   public boolean supprimerBynom(String nom);
     
    //recherche
     public List<Produit> rechercherProduit(String nom);
