@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2022 at 03:13 PM
+-- Generation Time: Mar 09, 2022 at 11:44 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -37,10 +37,9 @@ CREATE TABLE `catégorie` (
 --
 
 INSERT INTO `catégorie` (`id`, `nom`) VALUES
-(9, 'CONSOLES'),
-(11, 'SMARTPHONES'),
-(13, 'TV'),
-(14, 'PC');
+(36, 'fff'),
+(40, 'pp'),
+(41, 'loool');
 
 -- --------------------------------------------------------
 
@@ -51,20 +50,41 @@ INSERT INTO `catégorie` (`id`, `nom`) VALUES
 CREATE TABLE `produits` (
   `id` int(11) NOT NULL,
   `id_catégorie` int(11) NOT NULL,
+  `id_promotion` int(11) NOT NULL,
   `nom` varchar(256) NOT NULL,
   `prix` int(11) NOT NULL,
-  `image` varchar(256) NOT NULL
+  `image` varchar(256) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `profit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `produits`
 --
 
-INSERT INTO `produits` (`id`, `id_catégorie`, `nom`, `prix`, `image`) VALUES
-(9, 9, 'pc', 200, 'pc'),
-(14, 11, 'SMARTTV', 200, 'SMARTTV'),
-(16, 11, 'A51', 1000, 'A51'),
-(17, 11, 'XIOMI', 700, 'XIOMI');
+INSERT INTO `produits` (`id`, `id_catégorie`, `id_promotion`, `nom`, `prix`, `image`, `description`, `profit`) VALUES
+(111, 41, 8, 'madrid', 1000, 'download.jpg', 'qdsf', 10),
+(126, 40, 8, 'HALLLLAA', 1250, 'download.jpg', 'sqf', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promotion`
+--
+
+CREATE TABLE `promotion` (
+  `id` int(11) NOT NULL,
+  `percentage` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `promotion`
+--
+
+INSERT INTO `promotion` (`id`, `percentage`) VALUES
+(7, 10),
+(8, 20),
+(9, 15);
 
 --
 -- Indexes for dumped tables
@@ -81,7 +101,14 @@ ALTER TABLE `catégorie`
 --
 ALTER TABLE `produits`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `test` (`id_catégorie`);
+  ADD KEY `test` (`id_catégorie`),
+  ADD KEY `id_promotion` (`id_promotion`);
+
+--
+-- Indexes for table `promotion`
+--
+ALTER TABLE `promotion`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -91,13 +118,19 @@ ALTER TABLE `produits`
 -- AUTO_INCREMENT for table `catégorie`
 --
 ALTER TABLE `catégorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+
+--
+-- AUTO_INCREMENT for table `promotion`
+--
+ALTER TABLE `promotion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -107,6 +140,7 @@ ALTER TABLE `produits`
 -- Constraints for table `produits`
 --
 ALTER TABLE `produits`
+  ADD CONSTRAINT `produits_ibfk_1` FOREIGN KEY (`id_promotion`) REFERENCES `promotion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `test` FOREIGN KEY (`id_catégorie`) REFERENCES `catégorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
