@@ -11,12 +11,19 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.cell.MapValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -37,6 +44,9 @@ import services.ServicePointDeVente;
 public class WhoAreWeInterfaceController implements Initializable{
     
     IpointDeVente interfaceDeVente = new ServicePointDeVente();
+    WebView webView = new WebView();
+    WebEngine webEngine = webView.getEngine();
+    PointDeVente point;
 
     @FXML
     private Pane mapPane;
@@ -60,17 +70,22 @@ public class WhoAreWeInterfaceController implements Initializable{
       scrollpane.setHbarPolicy(ScrollBarPolicy.ALWAYS);
       scrollpane.setVbarPolicy(ScrollBarPolicy.NEVER);
       loadGP();
-      loadMap();
-          }
-    
-    //LOAD WEBVIEW
-    private void loadMap(){
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
-        File f = new File("index.html");
+      File f = new File("index.html");
+      webEngine.getLoadWorker().stateProperty().addListener(
+            new ChangeListener<Worker.State>() {
+              @Override public void changed(ObservableValue ov, Worker.State oldState, Worker.State newState) {
+                  if (newState == Worker.State.SUCCEEDED) {
+                      for (PointDeVente point : interfaceDeVente.afficherPointDeVentes())
+                        webEngine.executeScript("addMarker("+point.getLongitude()+",'"+point.getLatitude()+"')");                    
+                }
+                }
+            });
         webView.getEngine().load(f.toURI().toString());
         mapBorderPane.setCenter(webView);
-    }
+
+          }
+    
+  
     
     //LOAD DATA IN GRIDPANE
     private void loadGP(){
@@ -99,5 +114,32 @@ public class WhoAreWeInterfaceController implements Initializable{
         }
 
     }
+
+    @FXML
+    private void onGPclicked(MouseEvent event) {
+        
+        PointDeVente targetPoint;
+        Node source = (Node)event.getTarget() ;
+        if(source.getParent() instanceof Pane){
+         targetPoint = getDataFromScene(source.getParent());
+        }
+        else{
+            targetPoint = getDataFromScene(source.getParent().getParent());
+        }
+        this.point = interfaceDeVente.retrievePointDeVente(targetPoint.getReference());
+        if(webEngine.getLoadWorker().stateProperty().get() == Worker.State.SUCCEEDED)
+            webEngine.executeScript("goTo("+this.point.getLongitude()+",'"+this.point.getLatitude()+"')");
+    }
+
+    private PointDeVente getDataFromScene(Parent scene){
+        PointDeVente pt = new PointDeVente();
+        Label idLBL = (Label) scene.lookup("#idLBL");
+        pt.setReference(Integer.parseInt(idLBL.getText()));
+        
+        return pt; 
+    }
+
+    
+    
     
 }

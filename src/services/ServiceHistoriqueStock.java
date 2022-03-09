@@ -186,5 +186,30 @@ public class ServiceHistoriqueStock implements IhistoriqueStock{
         }
         return list;
     }
+
+    @Override
+    public List<HistoriqueStock> getHistoriquePt(PointDeVente pt, Date date) {
+        List<HistoriqueStock> historiquestocks = new ArrayList<HistoriqueStock>();
+
+        String req="SELECT * FROM historiquestock where id_pointdevente = "+pt.getReference()+" AND MONTH(date) = MONTH('"+date+"') AND YEAR(date) = YEAR('"+date+"')";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                historiquestocks.add(new HistoriqueStock(rs.getInt("reference"),interfaceStock.retrieveStock(rs.getInt("id_produit"), rs.getInt("id_pointdevente")),rs.getDate("date"), rs.getInt("quantite"), rs.getString("reason")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return historiquestocks;
+    }
+    
+    
     
 }

@@ -116,6 +116,16 @@
 	-fx-color-fill:  #00233a;
 }
 
+.AHref{
+	-fx-font: 15px "Arial"; 
+	-fx-text-alignment: center;
+	-fx-underline: true;
+}
+
+.AHref:hover{
+	-fx-text-fill: #6c8ba0;
+}
+
 
 GridPane :hover > Pane{
     -fx-background-color: #d4f0fc;

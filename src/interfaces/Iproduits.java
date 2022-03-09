@@ -45,10 +45,6 @@ public interface Iproduits {
 
     //delete
     public boolean supprimerProduit(Produit p);
+    
 
-    
-    
-    
-    
-    
 }

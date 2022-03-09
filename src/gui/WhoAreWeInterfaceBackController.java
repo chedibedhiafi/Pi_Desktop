@@ -141,9 +141,6 @@ public class WhoAreWeInterfaceBackController implements Initializable{
         EditPointDeVenteFXMLController editController = loader.getController();
         editController.setData(targetPoint);
         ((BorderPane)mapPane.getParent().getParent()).setCenter(root);
-          
-
-        
     }
     
     private PointDeVente getDataFromScene(Parent scene){
@@ -161,10 +158,6 @@ public class WhoAreWeInterfaceBackController implements Initializable{
         //The following both lines are the only addition we need to pass the arguments
         EditPointDeVenteFXMLController editController = loader.getController();
         editController.setData(new PointDeVente());
-        
-        
-        
-        
         ((BorderPane)mapPane.getParent().getParent()).setCenter(root);
             editController.loadMap();
 

@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -180,6 +181,16 @@ public class EditPointDeVenteFXMLController implements Initializable {
         Parent root = loader.load();
         //The following both lines are the only addition we need to pass the arguments
         
+        ((BorderPane)mapBorderPane.getParent()).setCenter(root);
+    }
+
+    @FXML
+    private void onEditInStockClicked(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("editStock.fxml"));
+        Parent root = loader.load();
+        //The following both lines are the only addition we need to pass the arguments
+        EditStockFXMLController editStockFXMLController = loader.getController();
+        editStockFXMLController.setData(this.point);
         ((BorderPane)mapBorderPane.getParent()).setCenter(root);
     }
 

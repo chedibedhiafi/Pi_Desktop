@@ -25,7 +25,7 @@ public class mainFX extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("editStock.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("mainInterfaceFXML.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -39,6 +39,7 @@ public class mainFX extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
     
     
     

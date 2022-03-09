@@ -8,6 +8,7 @@ package interfaces;
 import java.sql.Date;
 import java.util.List;
 import models.HistoriqueStock;
+import models.PointDeVente;
 import models.Produit;
 import models.Stock;
 
@@ -30,5 +31,7 @@ public interface IhistoriqueStock {
     public List<HistoriqueStock> getFromStock(Stock s);
     
     public List<Produit> bestSellersThisMonth(Date date);
+    
+    public List<HistoriqueStock> getHistoriquePt(PointDeVente pt, Date date);
 
 }
