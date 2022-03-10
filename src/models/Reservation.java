@@ -17,7 +17,40 @@ public class Reservation {
    private String     Nb_Places;
     private Date Date_Achat;
     private String        Total;
+    private int FK_Event;
    private Event e;
+
+    public int getFK_Event() {
+        return FK_Event;
+    }
+
+    public void setFK_Event(int FK_Event) {
+        this.FK_Event = FK_Event;
+    }
+
+    public Reservation(String Nb_Places, Date Date_Achat, String Total, int FK_Event) {
+        this.Nb_Places = Nb_Places;
+        this.Date_Achat = Date_Achat;
+        this.Total = Total;
+        this.FK_Event = FK_Event;
+    }
+
+    public Reservation(int Reserv_Id, String Nb_Places, Date Date_Achat, String Total, int FK_Event) {
+        this.Reserv_Id = Reserv_Id;
+        this.Nb_Places = Nb_Places;
+        this.Date_Achat = Date_Achat;
+        this.Total = Total;
+        this.FK_Event = FK_Event;
+    }
+
+    public Reservation(int Reserv_Id, String Nb_Places, Date Date_Achat, String Total, int FK_Event, Event e) {
+        this.Reserv_Id = Reserv_Id;
+        this.Nb_Places = Nb_Places;
+        this.Date_Achat = Date_Achat;
+        this.Total = Total;
+        this.FK_Event = FK_Event;
+        this.e = e;
+    }
 
     public Reservation() {
     }

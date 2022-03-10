@@ -37,8 +37,8 @@ public class ServiceReservation implements IService<Reservation> {
     @Override
     public void ajout(Reservation t) {
         try {
-            String req = "insert into Reservation (Nb_Places , Date_Achat , Total ) values"
-                    + " ( '" + t.getNb_Places() + "', '" + t.getDate_Achat() + "','" + t.getTotal() + "')";
+            String req = "insert into Reservation (Nb_Places , Date_Achat , Total , FK_Event) values"
+                    + " ( '" + t.getNb_Places() + "', '" + t.getDate_Achat() + "','" + t.getTotal() + "'," + t.getFK_Event() + ")";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
         } catch (SQLException ex) {

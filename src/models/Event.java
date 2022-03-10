@@ -27,6 +27,13 @@ import java.sql.Date;
         this.Description = Description;
     }
 
+    public Event(int Event_Id, Date Date_Event, String Titre, String Prix) {
+        this.Event_Id = Event_Id;
+        this.Date_Event = Date_Event;
+        this.Titre = Titre;
+        this.Prix = Prix;
+    }
+
 
 
     public Event(int Event_Id, Date Date_Event, String Titre, String Prix, String Image, String Description) {
@@ -168,6 +175,18 @@ import java.sql.Date;
     }
 
     public Object getDate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getid() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setId(int parseInt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

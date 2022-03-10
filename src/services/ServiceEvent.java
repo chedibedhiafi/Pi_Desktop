@@ -43,7 +43,9 @@ public class ServiceEvent implements IService<Event> {
             String req = "insert into event (Date_Event,Titre,Prix,Description) values"
                     + " ( '" + t.getDate_Event() + "', '" + t.getTitre() + "','" + t.getPrix() + "','" + t.getDescription() + "')";
             Statement st = cnx.createStatement();
-            st.executeUpdate(req);
+            if(st.executeUpdate(req)==1)
+                System.out.println("aaaa");
+                    
         } catch (SQLException ex) {
             ex.printStackTrace();       
         }
@@ -161,6 +163,14 @@ public List<Event> afficherListView() {
             ex.printStackTrace();
         }
         return e;
+    }
+    
+     
+    
+
+
+    public void supprimerEvent(Event c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
