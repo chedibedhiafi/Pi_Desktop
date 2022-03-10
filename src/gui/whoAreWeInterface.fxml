@@ -56,16 +56,10 @@
                         </ScrollPane>
                      </children>
                   </HBox>
-                  <Pane fx:id="mapPane" layoutX="1.0" layoutY="257.0" prefHeight="279.0" prefWidth="1172.0">
+                  <Pane fx:id="mapPane" layoutX="1.0" layoutY="257.0" prefHeight="371.0" prefWidth="1172.0">
                      <children>
-                        <BorderPane fx:id="mapBorderPane" layoutX="1.0" layoutY="-6.0" prefHeight="285.0" prefWidth="1176.0" />
+                        <BorderPane fx:id="mapBorderPane" layoutX="1.0" layoutY="-6.0" prefHeight="376.0" prefWidth="1176.0" />
                      </children></Pane>
-                  <Label layoutX="11.0" layoutY="540.0" prefHeight="23.0" prefWidth="1162.0" styleClass="TitleBlue" text="PEOPLE BEHIND THIS MASTERPIECE:" textFill="#00233a" />
-                  <Pane layoutY="565.0" prefHeight="64.0" prefWidth="1179.0" style="-fx-background-color: #00233a;">
-                     <children>
-                        <Label alignment="CENTER" layoutX="-2.0" layoutY="17.0" prefHeight="23.0" prefWidth="191.0" styleClass="TitleWhite" text="JUNIOR-DEV" textFill="WHITE" />
-                     </children>
-                  </Pane>
                </children>
             </Pane>
          </center>

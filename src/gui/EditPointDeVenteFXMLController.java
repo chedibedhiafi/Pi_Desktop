@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,7 +26,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -34,6 +39,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Window;
 import models.PointDeVente;
 import services.ServicePointDeVente;
 
@@ -157,6 +163,7 @@ public class EditPointDeVenteFXMLController implements Initializable {
 
     @FXML
     private void onAjouterModifierClicked(ActionEvent event) throws IOException {
+        if(checkLBL(latitudeLBL) & checkLBL(longitudeLBL) & checkTF(nomTF) & checkTF(proprioTF) & checkTF(proprioTF) & checkDP(dateOuvDP)){
         if(ajouterModifierBTN.getText() == "MODIFIER"){
             updatePtDeVente();
             interfaceDeVente.modifierPointDeVente(this.point);
@@ -171,6 +178,7 @@ public class EditPointDeVenteFXMLController implements Initializable {
         //The following both lines are the only addition we need to pass the arguments
         
         ((BorderPane)mapBorderPane.getParent()).setCenter(root);
+        }
 
         
     }
@@ -193,6 +201,49 @@ public class EditPointDeVenteFXMLController implements Initializable {
         editStockFXMLController.setData(this.point);
         ((BorderPane)mapBorderPane.getParent()).setCenter(root);
     }
+    
+    private boolean showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        Optional<ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK) {
+            return true;
+        }
+        return false;
+        }
+    
+    private boolean checkLBL(Label lbl){
+        if(lbl.getText()== null || lbl.getText().equals("0") ){
+            showAlert(Alert.AlertType.ERROR,null,"Parametres insuffisants", "Veuillez inserez les parametres manquants");
+            return false;
+        }
+        else
+            return true;
+    }
+    
+     private boolean checkTF(TextField tf){
+        if(tf.getText()== null || tf.getText().equals("")){
+                   showAlert(Alert.AlertType.ERROR,null,"Parametres insuffisants", "Veuillez inserez les parametres manquants");
+            return false;
+        }
+        else
+            return true;
+    }
+     
+     private boolean checkDP(DatePicker dp){
+        if(dp.getValue()== null || dp.getValue().isAfter(LocalDate.now())){
+     
+            showAlert(Alert.AlertType.ERROR,null,"Verifier la date inséré", "La date ne doit pas etre supérieure a la date d'aujourd'hui");
+            return false;
+        }
+        else
+            return true;
+    }
+
+
 
      
 }

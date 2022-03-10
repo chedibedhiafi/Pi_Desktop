@@ -20,7 +20,7 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Label>
-            <Label fx:id="idLBL" layoutX="10.0" layoutY="7.0" text="id label" />
+            <Label fx:id="idLBL" layoutX="10.0" layoutY="7.0" text="id label" visible="false" />
             <Label fx:id="adresseLBL" alignment="CENTER" layoutX="1.0" layoutY="106.0" prefHeight="23.0" prefWidth="150.0" text="adresse" textFill="#00233a" />
          </children>
       </Pane>

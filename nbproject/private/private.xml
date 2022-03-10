@@ -8,6 +8,7 @@
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/models/PointDeVente.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceProduitCommande.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceRate.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/InsertInStockController.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/ProduitStockController.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceUtilisateur.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/mainFX.java</file>
@@ -15,8 +16,8 @@
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/interfaces/Iproduits.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceLivraison.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/PtdeventeController.java</file>
+            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/AcceuilController.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/MainInterfaceFXMLController.java</file>
-            <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/editStock.fxml</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServicePromotion.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/services/ServiceProduit.java</file>
             <file>file:/C:/Users/21624/Desktop/Esprit%203eme/2eme%20Semestre/PI%20Dev/Quantech/src/gui/NavbarFXMLController.java</file>

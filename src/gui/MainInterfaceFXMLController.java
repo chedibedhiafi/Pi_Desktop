@@ -37,7 +37,7 @@ public class MainInterfaceFXMLController implements Initializable {
             ex.printStackTrace();
         }
         try {
-            mainBorderPane.setCenter(getPage("WhoAreWeInterface.fxml"));
+            mainBorderPane.setCenter(getPage("Acceuil.fxml"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

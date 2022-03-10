@@ -43,17 +43,10 @@
                         </ScrollPane>
                      </children>
                   </HBox>
-                  <Pane fx:id="mapPane" layoutX="4.0" layoutY="263.0" prefHeight="255.0" prefWidth="1169.0">
+                  <Pane fx:id="mapPane" layoutX="4.0" layoutY="263.0" prefHeight="366.0" prefWidth="1169.0">
                      <children>
-                        <BorderPane fx:id="mapBorderPane" layoutX="3.0" prefHeight="256.0" prefWidth="1166.0" />
+                        <BorderPane fx:id="mapBorderPane" layoutX="3.0" prefHeight="364.0" prefWidth="1166.0" />
                      </children></Pane>
-                  <Label layoutX="11.0" layoutY="525.0" prefHeight="23.0" prefWidth="1162.0" styleClass="TitleBlue" text="PEOPLE BEHIND THIS MASTERPIECE:" textFill="#00233a" />
-                  <Pane layoutY="555.0" prefHeight="74.0" prefWidth="1179.0" style="-fx-background-color: #00233a;">
-                     <children>
-                        <Label alignment="CENTER" layoutX="32.0" layoutY="26.0" prefHeight="23.0" prefWidth="169.0" styleClass="TitleWhite" text="JUNIOR-DEV" textFill="WHITE" />
-                        <Pane layoutX="202.0" layoutY="16.0" prefHeight="83.0" prefWidth="156.0" />
-                     </children>
-                  </Pane>
                   <Button fx:id="plusButton" layoutX="1152.0" layoutY="71.0" mnemonicParsing="false" onAction="#onPlusButtonClicked" text="+" />
                </children>
             </Pane>
