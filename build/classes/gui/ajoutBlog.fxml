@@ -2,39 +2,71 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="159.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutBlogController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1200.0" stylesheets="@elements/css/mainStyle1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutBlogController">
    <children>
-      <HBox alignment="CENTER" layoutX="157.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox prefHeight="17.0" prefWidth="440.0">
+      <BorderPane prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;">
+         <left>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #6c8ba0; -fx-border-radius: 5 5 5 5;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </BorderPane.margin>
                <children>
-                  <Label fx:id="titreBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="296.0" text="Titre" />
-                  <TextField fx:id="BlogTitreTF" prefHeight="7.0" prefWidth="440.0" />
-                  <Label fx:id="sujetBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="Sujet" />
-                  <TextField fx:id="BlogSujetTF" />
-                  <Label fx:id="dateBlog" alignment="TOP_LEFT" layoutX="10.0" layoutY="94.0" prefHeight="21.0" prefWidth="488.0" text="Date" />
-                  <DatePicker fx:id="datePicker" />
-                  <Label fx:id="ContenuBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="Contenu" />
-                  <TextField fx:id="BlogContenuTF" />
-                  <Label fx:id="idLBL" text="id" visible="false" />
-                  <Button fx:id="finishAjout" layoutX="10.0" layoutY="104.0" mnemonicParsing="false" onAction="#ajoutBlog" text="Ajout" textAlignment="CENTER" />
-                  <Button fx:id="SwitchToGestionBlogBTN" mnemonicParsing="false" onAction="#SwitchToGestionBlog" text="Retour" />
+                  <Label alignment="CENTER" layoutY="353.0" prefHeight="24.0" prefWidth="206.0" text="Blogs" visible="false" />
+                  <Button fx:id="AjouterBlogBTN" layoutX="59.0" layoutY="82.0" mnemonicParsing="false" onAction="#SwitchToAjouterBlog" text="Ajouter Blog" />
                </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" top="20.0" />
-               </HBox.margin>
-            </VBox>
-         </children>
-      </HBox>
+            </Pane>
+         </left>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #6c8ba0; -fx-border-radius: 5 5 5 5;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <GridPane fx:id="ptGP" prefHeight="631.0" prefWidth="971.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <HBox alignment="CENTER" layoutX="167.0" layoutY="169.0" prefHeight="324.0" prefWidth="514.0">
+                     <children>
+                        <VBox prefHeight="17.0" prefWidth="440.0">
+                           <children>
+                              <Label fx:id="titreBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="296.0" text="Titre" />
+                              <TextField fx:id="BlogTitreTF" prefHeight="7.0" prefWidth="440.0" promptText="Veuillez saisir le titre de votre blog" />
+                              <Label fx:id="sujetBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="Sujet" />
+                              <TextField fx:id="BlogSujetTF" promptText="Veuillez saisir le sujet de votre blog" />
+                              <Label fx:id="ContenuBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="Contenu" />
+                              <TextField fx:id="BlogContenuTF" promptText="Veuillez saisir le contenu de votre blog" />
+                              <Label fx:id="idLBL" text="id" visible="false" />
+                              <Button fx:id="finishAjout" layoutX="10.0" layoutY="104.0" mnemonicParsing="false" onAction="#ajoutBlog" prefHeight="24.0" prefWidth="64.0" text="Ajout" textAlignment="CENTER" />
+                              <Button fx:id="SwitchToGestionBlogBTN" mnemonicParsing="false" onAction="#SwitchToGestionBlog" text="Annulez" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets bottom="20.0" left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

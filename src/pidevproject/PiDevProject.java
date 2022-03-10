@@ -50,6 +50,7 @@ public class PiDevProject {
         //Vote
         Commentaire c3= new Commentaire (3, "I really like this blog", Date.valueOf("2012-12-12"), sb.RetrieveBlog(2));
        // Vote v1 = new Vote(1,c5);
+        //System.out.println(sv.RetrieveVote(14, 5));
         
         
         
@@ -103,8 +104,8 @@ public class PiDevProject {
         //System.out.println(sv.TriVote());
         //System.out.println(sv.SearchVote(5)); //by id_source
         //Commentaire c69 = new Commentaire(8, "xx", Date.valueOf("2012-12-13"), sb.RetrieveBlog(3))
-        Vote v2 = new Vote (1,sc.RetrieveCommentaires(10) , su.retrieveUtilisateur(5));
+       // Vote v2 = new Vote (1,sc.RetrieveCommentaires(10) , su.retrieveUtilisateur(5));
         Utilisateur u1 = new Utilisateur("haroun","haroun",Date.valueOf("2022-02-02"),"haroun","haroun","haroun");
-        System.out.println(sv.ajouterVote(v2));
+//        System.out.println(sv.ajouterVote(v2));
     }
 }

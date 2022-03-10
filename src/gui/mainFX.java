@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -24,11 +25,10 @@ public class mainFX extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        //"ajoutBlog.fxml"
-        //"MainCommentFXML.fxml"
-        //"updateBlog.fxml"
-        Parent root = FXMLLoader.load(getClass().getResource("gestionBlog.fxml"));   //"mainFXML.fxml"
+        Parent root = FXMLLoader.load(getClass().getResource("mainInterfaceFXML.fxml"));
         Scene scene = new Scene(root);
+        primaryStage.setResizable(false);
+        primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -6,6 +6,7 @@
 package services;
 
 import interfaces.Icommentaire;
+import interfaces.Iutilisateur;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,10 +26,11 @@ public class ServiceCommentaire implements Icommentaire {
     Connection cnx = MaConnexion.getInstance().getCnx();
     
     ServiceBlog sb = new ServiceBlog();
+    Iutilisateur su = new ServiceUtilisateur();
 
     @Override
     public boolean ajouterCommentaire(Commentaire c) {
-        String request = "INSERT INTO `commentaire`(`contenu`, `date`, `id_blog`) VALUES ('"+c.getContenu()+"','"+c.getDate()+"',"+c.getId_blog().getId()+")";
+        String request = "INSERT INTO `commentaire`(`contenu`, `date`, `id_blog`, `id_user`) VALUES ('"+c.getContenu()+"','"+c.getDate()+"',"+c.getId_blog().getId()+", "+c.getId_user().getId()+")";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -51,7 +53,7 @@ public class ServiceCommentaire implements Icommentaire {
             //SOB HEDHA FI HEDHA
             // "yyyy-M-d"
             while(rs.next()){               
-              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog"))));
+              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog")), su.retrieveUtilisateur(rs.getInt("id_user"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -61,7 +63,7 @@ public class ServiceCommentaire implements Icommentaire {
 
     @Override
     public boolean modifierCommentaire(Commentaire c) {
-        String req = "UPDATE `commentaire` SET `contenu`='"+c.getContenu()+"',`date`='"+c.getDate()+"',`id_blog`='"+c.getId_blog().getId()+"' WHERE `id` = "+c.getId()+" ";
+        String req = "UPDATE `commentaire` SET `contenu`='"+c.getContenu()+"',`date`='"+c.getDate()+"',`id_blog`='"+c.getId_blog().getId()+"', `id_user`='"+c.getId_user().getId()+"' WHERE `id` = "+c.getId()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -104,7 +106,7 @@ public class ServiceCommentaire implements Icommentaire {
 
             //SOB HEDHA FI HEDHA
             if(rs.next()){
-                c = new Commentaire(rs.getInt("id"),rs.getString("contenu"),rs.getDate("date"), sb.RetrieveBlog(rs.getInt("id_blog")));
+                c = new Commentaire(rs.getInt("id"),rs.getString("contenu"),rs.getDate("date"), sb.RetrieveBlog(rs.getInt("id_blog")), su.retrieveUtilisateur(rs.getInt("id_user")));
                 
             }
 
@@ -127,7 +129,7 @@ public class ServiceCommentaire implements Icommentaire {
             //SOB HEDHA FI HEDHA
             // "yyyy-M-d"
             while(rs.next()){               
-              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog"))));
+              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog")), su.retrieveUtilisateur(rs.getInt("id_user"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -144,7 +146,7 @@ public class ServiceCommentaire implements Icommentaire {
             st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while(rs.next()){               
-              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog"))));
+              commentaires.add(new Commentaire(rs.getInt("id"),rs.getString(2),rs.getDate(3),sb.RetrieveBlog(rs.getInt("id_blog")), su.retrieveUtilisateur(rs.getInt("id_user"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();

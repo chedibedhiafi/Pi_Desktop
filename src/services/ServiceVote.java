@@ -148,6 +148,29 @@ public class ServiceVote implements Ivote{
         return votes;
     }
 
+    @Override
+    public Vote RetrieveVote(int id_source, int id_user) {
+        Vote v = null;
+        String req="SELECT * FROM vote WHERE id_source="+id_source+" AND id_user="+id_user+"  ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            if(rs.next()){
+                v = new Vote(rs.getInt("id"),rs.getInt("type"), sc.RetrieveCommentaires(rs.getInt("id_source")), su.retrieveUtilisateur(rs.getInt("id_user")));
+                
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        
+        return v;
+    }
+
     
     
 }
