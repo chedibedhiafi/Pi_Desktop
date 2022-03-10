@@ -12,15 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/UnEventUtilisateurController.java</file>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/AjouterReservationController.java</file>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/MainFrontController.java</file>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/mainFront.fxml</file>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/UnEventController.java</file>
+            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/utils/MyDB.java</file>
             <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/NewFXMain.java</file>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/RateController.java</file>
             <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/AfficherListReservationController.java</file>
-            <file>file:/C:/Users/SOULAYMA/Documents/NetBeansProjects/events/src/gu/EventsUtilisateursController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gu.MainFrontController">
+   <children>
+      <BorderPane fx:id="mainBRDRpane" prefHeight="650.0" prefWidth="1200.0">
+         <top>
+            <Pane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #00233a;" BorderPane.alignment="CENTER" />
+         </top></BorderPane>
+   </children>
+</AnchorPane>
