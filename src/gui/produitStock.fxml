@@ -14,7 +14,7 @@
             <Insets />
          </opaqueInsets>
       </Pane>
-      <Label layoutX="160.0" layoutY="91.0" styleClass="TitleBlue" text="Quantité:" textFill="#00233a" />
+      <Label fx:id="quantitee" layoutX="160.0" layoutY="91.0" styleClass="TitleBlue" text="Quantité:" textFill="#00233a" />
       <Label fx:id="qteLBL" layoutX="288.0" layoutY="93.0" text="60" textFill="#5cc34a">
          <font>
             <Font name="System Bold" size="15.0" />

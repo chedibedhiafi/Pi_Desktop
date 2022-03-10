@@ -52,6 +52,8 @@ public class ProduitStockController implements Initializable {
     private Label promotionLBL;
     @FXML
     private Label qteLBL;
+    @FXML
+    private Label quantitee;
 
     /**
      * Initializes the controller class.
@@ -107,6 +109,11 @@ public class ProduitStockController implements Initializable {
       
        
     }
+     
+     public void hideQuantite(){
+         quantitee.setVisible(false);
+         qteLBL.setVisible(false);
+     }
 
     
 }

@@ -3,35 +3,51 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1200.0" stylesheets="@elements/css/mainStyle1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AcceuilController">
    <children>
       <BorderPane prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;">
          <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #6c8ba0; -fx-border-radius: 5 5 5 5;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFF; -fx-border-color: #6c8ba0; -fx-border-radius: 5 5 5 5;" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </BorderPane.margin>
                <children>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="16.0" prefHeight="23.0" prefWidth="1176.0" styleClass="TitleBlue" text="Best Sellers of the month" textFill="#00233a" />
-                  <ScrollPane layoutX="10.0" layoutY="50.0" prefHeight="569.0" prefWidth="1162.0">
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@elements/images/wili.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="16.0" prefHeight="23.0" prefWidth="1176.0" styleClass="TitleBlue" text="Best Sellers of the month" textFill="#026ba4" />
+                  <ScrollPane layoutX="10.0" layoutY="50.0" prefHeight="179.0" prefWidth="1162.0">
                      <content>
-                        <GridPane fx:id="bestSellersGP" prefHeight="565.0" prefWidth="1158.0">
+                        <GridPane fx:id="bestSellersGP" prefHeight="128.0" prefWidth="1465.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="360.0" prefWidth="360.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="160.0" prefHeight="160.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                         </GridPane>
                      </content>
                   </ScrollPane>
+                  <ImageView fitHeight="379.0" fitWidth="1180.0" layoutX="-1.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@elements/images/acceuilFooter.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="212.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: italic;" styleClass="textDG" text="&quot;Chez QUANTECH, nous nous assurons de répondre à toutes les attentes de notre cher client et de lui offrir la meilleure expérience possible&quot;" />
+                  <Text layoutX="212.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TitleBlue" text="Le Directeur Général de Quantech" />
+                  <Text layoutX="212.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mr. Maalej Walid" />
                </children>
             </Pane>
          </center>

@@ -130,3 +130,9 @@
 GridPane :hover > Pane{
     -fx-background-color: #d4f0fc;
 }
+
+.textDG{
+	-fx-font: 15px "Arial";
+	-fx-text-fill: #306b92;
+	-fx-font-style: italic;
+}
