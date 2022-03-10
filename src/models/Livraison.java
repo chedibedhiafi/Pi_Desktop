@@ -115,7 +115,121 @@ public class Livraison {
     public String toString() {
         return "Livraison{" + "id=" + id + ", frais_livraison=" + frais_livraison + ", etat_livraison=" + etat_livraison + ", num_livreur=" + num_livreur + ", commande=" + c + ", Tva=" + Tva + ", Somme=" + Somme + '}';
     }
+private String type;
+private String nom;
+private String prenom;
+private long cin;
+private String compagnie;
+private String adresse;
+private String ville;
+private String code_postal;
+private long numtel;
+private String commentaire;
+private String methode;
 
+    public Livraison(String type, String nom, String prenom, long cin, String compagnie, String adresse, String ville, String code_postal, long numtel, String commentaire, String methode) {
+        this.type = type;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.cin = cin;
+        this.compagnie = compagnie;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.code_postal = code_postal;
+        this.numtel = numtel;
+        this.commentaire = commentaire;
+        this.methode = methode;
+        
+    }
+    
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public long getCin() {
+        return cin;
+    }
+
+    public void setCin(long cin) {
+        this.cin = cin;
+    }
+
+    public String getCompagnie() {
+        return compagnie;
+    }
+
+    public void setCompagnie(String compagnie) {
+        this.compagnie = compagnie;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getCode_postal() {
+        return code_postal;
+    }
+
+    public void setCode_postal(String code_postal) {
+        this.code_postal = code_postal;
+    }
+
+    public long getNumtel() {
+        return numtel;
+    }
+
+    public void setNumtel(long numtel) {
+        this.numtel = numtel;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+    }
+
+    public String getMethode() {
+        return methode;
+    }
+
+    public void setMethode(String methode) {
+        this.methode = methode;
+    }
 
 
     
@@ -123,6 +237,15 @@ public class Livraison {
   
 
  
+    
+    
+    
+    
+    
+    
+    
+    
+    
    
 
 }

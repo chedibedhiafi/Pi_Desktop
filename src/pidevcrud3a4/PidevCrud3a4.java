@@ -34,34 +34,34 @@ public class PidevCrud3a4 {
    Date date_creation1=new Date(2021, 2, 22);
    Date date_end1= new Date(2021,5,23);
         // commande
-       Commande c1 = new Commande (date_creation, date_end);
-
-         //SERVICE
-        ServiceCommande sc = new ServiceCommande();
-
-         //AJOUT COMMANDE
-        //System.out.println(sc.ajouterCommande(c1));
-        
-         //AFFICHER COMMANDES
-       //System.out.println(sc.afficherCommandes());
+//       Commande c1 = new Commande (date_creation, date_end);
+//
+//         SERVICE
+//        ServiceCommande sc = new ServiceCommande();
+//
+//         AJOUT COMMANDE
+//        System.out.println(sc.ajouterCommande(c1));
+//        
+//         AFFICHER COMMANDES
+//       System.out.println(sc.afficherCommandes());
 
         // MODIFIER COMMANDE 
-        //Commande c = new Commande(3,date_creation1,date_end1);
-        //System.out.println("Update\n");
-        //System.out.println(sc.modifierCommande(c));
+//        Commande c = new Commande(3,date_creation1,date_end1);
+//        System.out.println("Update\n");
+//        System.out.println(sc.modifierCommande(c));
 
         //SUPPRIMER COMMANDE
-        //System.out.println("Delete");
-       //c1.setId(5);
-        //System.out.println(sc.supprimerCommande(c1));
+//        System.out.println("Delete");
+//       c1.setId(5);
+//        System.out.println(sc.supprimerCommande(c1));
         
         /////////////////////////
-         // livraison
-       Livraison l1 = new Livraison (35f,10,94110535,sc.retrieveCommande(10));
+//         // livraison
+//    Livraison l1 = new Livraison (35f,10,94110535,sc.retrieveCommande(10));
 //
-//        SERVICE
-        ServiceLivraison sl = new ServiceLivraison();
-//
+//////        SERVICE
+//      ServiceLivraison sl = new ServiceLivraison();
+////
 //        // AJOUT LIVRAISON
      //System.out.println(sl.ajouterLivraison(l1));
 //        
@@ -85,12 +85,12 @@ public class PidevCrud3a4 {
 //                        " , id commande : "+sl.afficherLivraison().get(i).getC().getId());
 //            }
 //        }
-//        
-//
-//        // MODIFIER LIVRAISON 
- Livraison l= new Livraison(10,45f,2,24555888,sc.retrieveCommande(9));
-//        System.out.println("Update\n");
-//        System.out.println(sl.modifierLivraison(l));
+////        
+////
+////        // MODIFIER LIVRAISON 
+//Livraison l= new Livraison(2,45f,2,24555888,sc.retrieveCommande(7));
+//       System.out.println("Update\n");
+//       System.out.println(sl.modifierLivraison(l));
 
 //        //SUPPRIMER LIVRAISON
 //        System.out.println("Delete");

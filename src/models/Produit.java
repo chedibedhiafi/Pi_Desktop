@@ -16,6 +16,9 @@ public class Produit {
     private String nom;
     private int prix;
     private String image;
+    private int quantite;
+    private int total;
+     private int description;
 
     public Produit() {
     }
@@ -26,6 +29,22 @@ public class Produit {
         this.nom = nom;
         this.prix = prix;
         this.image = image;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
     
 
@@ -84,6 +103,14 @@ public class Produit {
 
     public void setCatégorie(Catégorie catégorie) {
         this.catégorie = catégorie;
+    }
+
+    public int getDescription() {
+        return description;
+    }
+
+    public void setDescription(int description) {
+        this.description = description;
     }
 
      

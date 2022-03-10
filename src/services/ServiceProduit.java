@@ -184,7 +184,30 @@ public class ServiceProduit implements Iproduits{
         
     }
 
-   
+     public Produit getProduitByNom(String nom){
+         Produit produit =  null;
+           String req="SELECT * FROM produits WHERE nom ='"+nom+"' ";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                produit=new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"));
+                ServiceProduitCommande serc=new ServiceProduitCommande();
+                produit.setQuantite(serc.getQuantity(produit.getId()));
+                produit.setTotal(produit.getPrix()*produit.getQuantite());
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return produit;
+        
+     }
 
 
     
