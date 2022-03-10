@@ -18,7 +18,7 @@ public interface IService<T> {
     
     public void ajout(T t);
     public void modifier(T t);
-    public void supprimer(T t);
+    public void supprimer(int t);
     public List<T> afficher();
     public T retrieve(int id);
     

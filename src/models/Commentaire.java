@@ -22,9 +22,36 @@ public class Commentaire {
     private String contenu;
     private Date date;
     private Blog id_blog;
+    private Utilisateur id_user;
 
     public Commentaire() {
     }
+
+    public Commentaire(int id, String contenu, Date date, Blog id_blog, Utilisateur id_user) {
+        this.id = id;
+        this.contenu = contenu;
+        this.date = date;
+        this.id_blog = id_blog;
+        this.id_user = id_user;
+    }
+
+    public Commentaire(String contenu, Date date, Blog id_blog, Utilisateur id_user) {
+        this.contenu = contenu;
+        this.date = date;
+        this.id_blog = id_blog;
+        this.id_user = id_user;
+    }
+    
+    
+    public Commentaire(String contenu) {
+        this.contenu = contenu;
+    }
+
+    public Commentaire(int id, String contenu) {
+        this.id = id;
+        this.contenu = contenu;
+    }
+    
 
     public Commentaire(int id, String contenu, Date date, Blog id_blog) {
         this.id = id;
@@ -38,6 +65,15 @@ public class Commentaire {
         this.date = date;
         this.id_blog = id_blog;
     }
+
+    public Commentaire(int id, String contenu, Date date) {
+        this.id = id;
+        this.contenu = contenu;
+        this.date = date;
+        this.id_blog = this.id_blog;
+    }
+    
+    
     
     
     //GETTERS
@@ -55,6 +91,14 @@ public class Commentaire {
 
     public Blog getId_blog() {
         return id_blog;
+    }
+
+    public Utilisateur getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(Utilisateur id_user) {
+        this.id_user = id_user;
     }
     
     
@@ -80,8 +124,9 @@ public class Commentaire {
 
     @Override
     public String toString() {
-        return "Commentaire{" + "id=" + id + ", contenu=" + contenu + ", date=" + date + ", id_blog=" + id_blog + '}';
+        return "Commentaire{" + "id=" + id + ", contenu=" + contenu + ", date=" + date + ", id_blog=" + id_blog + ", id_user=" + id_user + '}';
     }
+
     
     
     

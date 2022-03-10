@@ -19,11 +19,15 @@ public class Employe extends Utilisateur{
     public Employe() {
     }
 
-    public Employe(String role, String login, String mdp) {
+    public Employe(String login, String mdp) {
         super(login, mdp);
-        this.role = role;
+        
     }
 
+    public Employe(String mdp, int id) {
+        super(mdp, id);
+    }
+    
     public Employe(PointDeVente pdv, String role, String login, String mdp, Date date_naissance, String nom, String prenom, String email, int tentative, Date unlock_date) {
         super(login, mdp, date_naissance, nom, prenom, email, tentative, unlock_date);
         this.role = role;
@@ -47,6 +51,21 @@ public class Employe extends Utilisateur{
         this.role = role;
         this.pdv = pdv;
     }
+    
+    
+    public Employe(String pdv_nom, String role, String login, String mdp, Date date_naissance, String nom, String prenom, String email, int tentative, Date unlock_date) {
+        super(login, mdp, date_naissance, nom, prenom, email, tentative, unlock_date);
+        this.pdv.setName(pdv_nom);
+        this.role = role;
+        this.pdv = pdv;
+    }
+    
+    public Employe(String pdv_nom, String role,int id, String login, String mdp, Date date_naissance, String nom, String prenom, String email) {
+        super(id,login, mdp, date_naissance, nom, prenom, email);
+        this.pdv.setName(pdv_nom);
+        this.role = role;
+    }
+
 
 
     public String getRole() {

@@ -23,6 +23,7 @@ public class ServiceCatégorie implements Icatégorie{
     
     
     Connection cnx = utils.MaConnexion.getInstance().getCnx();
+    
 
     @Override
     public boolean ajouterCatégorie(Catégorie c) {
@@ -138,6 +139,23 @@ public class ServiceCatégorie implements Icatégorie{
         return catégorie;
         
         
+    }
+
+    @Override
+    public Catégorie retrieveCategorieByNom(String s) {
+           Catégorie cat = new Catégorie();
+        String query = "SELECT * FROM catégorie WHERE nom = '" + s + "' ";
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                cat.setId(rs.getInt(1));
+                cat.setNom(rs.getString(2));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return cat;
     }
     }
     

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="159.0" prefWidth="360.0" stylesheets="@elements/css/mainStyle1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProduitStockController">
+   <children>
+      <Pane layoutX="11.0" layoutY="8.0" prefHeight="142.0" prefWidth="468.0" style="-fx-border-color: #00233a;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Label fx:id="quantitee" layoutX="160.0" layoutY="91.0" styleClass="TitleBlue" text="Quantité:" textFill="#00233a" />
+      <Label fx:id="qteLBL" layoutX="288.0" layoutY="93.0" text="60" textFill="#5cc34a">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLBL" text="id" visible="false" />
+      <Label fx:id="categorieLBL" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="categorie" visible="false" />
+      <Label layoutX="160.0" layoutY="20.0" styleClass="TitleBlue" stylesheets="@elements/css/mainStyle.css" text="Nom:" textFill="#00233a">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomLBL" alignment="TOP_LEFT" layoutX="288.0" layoutY="23.0" prefHeight="21.0" prefWidth="177.0" text="nom" textFill="#3d567f" />
+      <Label layoutX="161.0" layoutY="44.0" styleClass="TitleBlue" text="Prix:" textFill="#00233a">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="prixLBL" alignment="TOP_LEFT" layoutX="288.0" layoutY="46.0" prefHeight="21.0" prefWidth="196.0" text="prix" textFill="#3d567f" />
+      <Label layoutX="160.0" layoutY="67.0" styleClass="TitleBlue" text="Description:" textFill="#00233a">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="descriptionLBL" layoutX="287.0" layoutY="69.0" prefHeight="21.0" prefWidth="196.0" text="description" textFill="#3d567f" />
+      <Label fx:id="profitLBL" text="profit" visible="false" />
+      <Label fx:id="promotionLBL" text="promotion" visible="false" />
+      <ImageView fx:id="image" fitHeight="119.0" fitWidth="126.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

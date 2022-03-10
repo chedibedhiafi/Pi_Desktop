@@ -13,32 +13,90 @@ public class Produit {
     
     private int id ;
     private Catégorie catégorie;
+    private Promotion promotion;
     private String nom;
     private int prix;
     private String image;
+    private String description;
+    private int profit;
+    private int quantite;
+    private int total;
 
     public Produit() {
     }
 
-    public Produit(int id, Catégorie catégorie, String nom, int prix, String image) {
+    public Produit(int id, Catégorie catégorie, Promotion promotion, String nom, int prix, String image, String description, int profit) {
         this.id = id;
         this.catégorie = catégorie;
+        this.promotion = promotion;
         this.nom = nom;
         this.prix = prix;
         this.image = image;
+        this.description = description;
+        this.profit = profit;
     }
     
 
-   
-    
-    //ID AUTOINCRIMENT
+    public Produit(Catégorie catégorie, Promotion promotion, String nom, int prix, String image, String description, int profit) {
+        this.catégorie = catégorie;
+        this.promotion = promotion;
+        this.nom = nom;
+        this.prix = prix;
+        this.image = image;
+        this.description = description;
+        this.profit = profit;
+    }
 
-    public Produit(Catégorie catégorie, String nom, int prix, String image) {
+    public Produit(Catégorie catégorie, String nom, int prix, String description) {
         this.catégorie = catégorie;
         this.nom = nom;
         this.prix = prix;
-        this.image = image;
+        this.description = description;
     }
+
+    public Produit(Catégorie catégorie, Promotion promotion) {
+        this.catégorie = catégorie;
+        this.promotion = promotion;
+    }
+    
+
+    
+
+    
+
+    public Produit(int id, Catégorie catégorie, Promotion promotion, String nom, int prix, String description, int profit) {
+        this.id = id;
+        this.catégorie = catégorie;
+        this.promotion = promotion;
+        this.nom = nom;
+        this.prix = prix;
+        this.description = description;
+        this.profit = profit;
+    }
+
+    public Produit(Catégorie catégorie, Promotion promotion, String nom, int prix, String description, int profit) {
+        this.catégorie = catégorie;
+        this.promotion = promotion;
+        this.nom = nom;
+        this.prix = prix;
+        this.description = description;
+        this.profit = profit;
+    }
+
+    public Produit(int aInt, Catégorie retrivecatégorie, String string, int aInt0, String string0,String desc) {
+       this.id=aInt;
+       this.catégorie=retrivecatégorie;
+       this.nom=string;
+       this.prix=aInt0;
+       this.image=string0;
+       this.description=desc;
+    }
+    
+
+    
+    
+
+ 
 
     //GETTER AND SETTERS
     public int getId() {
@@ -48,6 +106,20 @@ public class Produit {
     public Catégorie getCatégorie() {
         return catégorie;
     }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getProfit() {
+        return profit;
+    }
+
+   
 
   
 
@@ -86,13 +158,51 @@ public class Produit {
         this.catégorie = catégorie;
     }
 
+    public void setPromotion(Promotion promotion) {
+        this.promotion = promotion;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setProfit(int profit) {
+        this.profit = profit;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+  
+   
+
+    
      
     //affichage
 
     @Override
     public String toString() {
-        return "Produit{" + "id=" + id + ", cat\u00e9gorie=" + catégorie + ", nom=" + nom + ", prix=" + prix + ", image=" + image + '}';
+        return "Produit{" + "id=" + id + ", cat\u00e9gorie=" + catégorie + ", promotion=" + promotion + ", nom=" + nom + ", prix=" + prix + ", image=" + image + ", description=" + description + ", profit=" + profit + '}';
     }
+
+    
+   
+
+ 
+   
 
     
 

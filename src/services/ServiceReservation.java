@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import models.Event;
 import models.Reservation;
 import utils.MaConnexion;
@@ -35,7 +38,7 @@ public class ServiceReservation implements IService<Reservation> {
     public void ajout(Reservation t) {
         try {
             String req = "insert into Reservation (Nb_Places , Date_Achat , Total , FK_Event) values"
-                    + " ( '" + t.getNb_Places() + "', '" + t.getDate_Achat() + "','" + t.getTotal() + "','" + t.getE().getEvent_Id()+"')";
+                    + " ( '" + t.getNb_Places() + "', '" + t.getDate_Achat() + "','" + t.getTotal() + "'," + t.getFK_Event() + ")";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
         } catch (SQLException ex) {
@@ -47,13 +50,13 @@ public class ServiceReservation implements IService<Reservation> {
     @Override
     public void modifier(Reservation t) {
         try {
-            String req = "update reservation set Nb_Places = ? , Date_Achat = ?  , Total = ? , FK_Event = ?  where Reserv_Id = ?";
+            String req = "update reservation set Nb_Places = ? , Date_Achat = ?  , Total = ?   where Reserv_Id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, t.getNb_Places());
+            ps.setString(1, t.getNb_Places());
             ps.setDate(2, t.getDate_Achat());
-            ps.setDouble(3, t.getTotal());
-            ps.setInt(5, t.getReserv_Id ());
-            ps.setInt(4, ((Event)t.getE()).getEvent_Id());
+            ps.setString(3, t.getTotal());
+            ps.setInt(4, t.getReserv_Id ());
+            
             ps.executeUpdate();
             
         } catch (SQLException ex) {
@@ -62,17 +65,16 @@ public class ServiceReservation implements IService<Reservation> {
         
     }
 
-    @Override
-    public void supprimer(Reservation r) {
+ @Override
+       public void supprimer(int R_Id) {
         try {
-            String req = "delete from reservation where Reserv_Id = ?";
+            String req = "delete from Reservation where Reserv_Id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, r.getReserv_Id());
+            ps.setInt(1, R_Id);
             ps.executeUpdate();
         } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
+            Logger.getLogger(ServiceReservation.class.getName()).log(Level.SEVERE, null, ex);
+        } }
 
     @Override
     public List<Reservation> afficher() {
@@ -86,8 +88,8 @@ public class ServiceReservation implements IService<Reservation> {
                 Reservation e = new Reservation();
                 e.setReserv_Id(rs.getInt(1));
                 e.setDate_Achat(rs.getDate("Date_Achat"));
-                e.setNb_Places(rs.getInt("Nb_Places"));
-                e.setTotal(rs.getDouble("Total"));
+                e.setNb_Places(rs.getString("Nb_Places"));
+                e.setTotal(rs.getString("Total"));
                 e.setE((Event)se.retrieve(rs.getInt("FK_Event")));
 
                 list.add(e);
@@ -111,8 +113,8 @@ public class ServiceReservation implements IService<Reservation> {
                 Reservation e = new Reservation();
                 e.setReserv_Id(rs.getInt(1));
                 e.setDate_Achat(rs.getDate("Date_Achat"));
-                e.setNb_Places(rs.getInt("Nb_Places"));
-                e.setTotal(rs.getDouble("Total"));
+                e.setNb_Places(rs.getString("Nb_Places"));
+                e.setTotal(rs.getString("Total"));
                 e.setE((Event)se.retrieve(rs.getInt("FK_Event")));
 
                 

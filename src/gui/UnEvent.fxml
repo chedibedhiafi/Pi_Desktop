@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="159.0" prefWidth="597.0" stylesheets="@../elements/css/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UnEventController">
+<children>
+      <HBox alignment="CENTER" layoutX="157.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imgIV" fitHeight="120.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@elements/images/sensor-icon-png-blue-event-icon-pngevent-icon-png-free-transparent-png-images-pngaaacom.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox prefHeight="17.0" prefWidth="440.0" styleClass="root" stylesheets="@css/ptdeventeStyle.css">
+               <children>
+                  <Label fx:id="nameLBL" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="471.0" styleClass="root" stylesheets="@css/ptdeventeStyle.css" text="name" />
+                  <Label fx:id="proprietaireLBL" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="proprietaire" />
+                  <Label fx:id="adressLBL" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="adresse" />
+                  <Label fx:id="date_ouvLBL" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="date ouverture" />
+                  <Label fx:id="idLBL" text="0" visible="false" />
+                  <Label fx:id="modifierBTN" alignment="CENTER" prefHeight="20.0" prefWidth="123.0" styleClass="root" text="MODIFIER">
+                     <stylesheets>
+                        <URL value="@../elements/css/mainStyle.css" />
+                        <URL value="@../elements/css/mainStyle.css" />
+                     </stylesheets></Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" top="20.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+     
+</AnchorPane>

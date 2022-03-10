@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import models.Commande;
 import utils.MaConnexion;
 
@@ -51,7 +53,10 @@ import utils.MaConnexion;
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
+                Commande c=new Commande(rs.getInt("id"),rs.getDate("date_creation"),rs.getDate("date_envoie"));
+                System.out.println(c.toString()+"***********");
                 commandes.add(new Commande(rs.getInt("id"),rs.getDate("date_creation"),rs.getDate("date_envoie")));
+                
             }
 
         } catch (SQLException e) {
@@ -115,7 +120,53 @@ import utils.MaConnexion;
         return c;
     }
 
-  
+public ObservableList<Commande> afficherCommandesV2() {
+      
+        ObservableList<Commande> commandes = FXCollections.observableArrayList();
+
+        String req="SELECT * FROM commande";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                commandes.add(new Commande(rs.getInt("id"),rs.getDate("date_creation"),rs.getDate("date_envoie")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return commandes;
+    }  
+
+    public Boolean iSRemise(int id){
+        Boolean hasRemise;
+
+        String req="SELECT MOD(count(*),3) FROM commande where id_user="+id;
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                if(rs.getInt(1)==0)
+                {
+                    return true;
+                    
+                }
+            }
+            return false;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     
 }

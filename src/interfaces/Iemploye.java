@@ -13,12 +13,19 @@ import models.Employe;
  * @author 21694
  */
 public interface Iemploye {
-    public boolean ajouterEmploye(Employe e);
+    public Employe ajouterEmploye(Employe e);
     
     //lister
     public List<Employe> afficherEmployes();
     
-    public boolean modifierEmploye(Employe e);
+    public Employe modifierEmploye(Employe e);
     
     public boolean supprimerEmploye(Employe e);
+    
+    public Employe retrieveEmploye(Employe e);
+    
+    public boolean modifierMdp(Employe e);
+    
+    
+    
 }

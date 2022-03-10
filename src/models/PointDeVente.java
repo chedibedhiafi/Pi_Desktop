@@ -20,6 +20,8 @@ public class PointDeVente {
     private String proprietaire;
     private String adresse;
     private Date date_ouverture;
+    private String longitude;
+    private String latitude;
 
     public PointDeVente() {
     }
@@ -37,6 +39,16 @@ public class PointDeVente {
         this.proprietaire = proprietaire;
         this.adresse = adresse;
         this.date_ouverture = date_ouverture;
+    }
+    
+    public PointDeVente(int reference, String name, String proprietaire, String adresse, Date date_ouverture, String longitude, String latitude) {
+        this.reference = reference;
+        this.name = name;
+        this.proprietaire = proprietaire;
+        this.adresse = adresse;
+        this.date_ouverture = date_ouverture;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
     
@@ -80,10 +92,28 @@ public class PointDeVente {
         this.date_ouverture = date_ouverture;
     }
 
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
     @Override
     public String toString() {
-        return "PointDeVente{" + "reference=" + reference + ", name=" + name + ", proprietaire=" + proprietaire + ", adresse=" + adresse + ", date_ouverture=" + date_ouverture + '}';
+        return "PointDeVente{" + "reference=" + reference + ", name=" + name + ", proprietaire=" + proprietaire + ", adresse=" + adresse + ", date_ouverture=" + date_ouverture + ", longitude=" + longitude + ", latitude=" + latitude + '}';
     }
+
+    
     
     public String concat(){
         return reference + ".@." + name + ".@." + proprietaire + ".@." + adresse + ".@." + date_ouverture ;

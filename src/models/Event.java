@@ -15,40 +15,51 @@ import java.sql.Date;
  private int Event_Id;
  private Date Date_Event;
  private String Titre;
- private Double Prix;
+ private String Prix;
  private String Image;
  private String Description;
- private int Fk_Reserv;
+
+    public Event(int Event_Id, Date Date_Event, String Titre, String Prix, String Description) {
+        this.Event_Id = Event_Id;
+        this.Date_Event = Date_Event;
+        this.Titre = Titre;
+        this.Prix = Prix;
+        this.Description = Description;
+    }
+
+    public Event(int Event_Id, Date Date_Event, String Titre, String Prix) {
+        this.Event_Id = Event_Id;
+        this.Date_Event = Date_Event;
+        this.Titre = Titre;
+        this.Prix = Prix;
+    }
+
+
+
+    public Event(int Event_Id, Date Date_Event, String Titre, String Prix, String Image, String Description) {
+        this.Event_Id = Event_Id;
+        this.Date_Event = Date_Event;
+        this.Titre = Titre;
+        this.Prix = Prix;
+        this.Image = Image;
+        this.Description = Description;
+    }
+
+    public Event(Date Date_Event, String Titre, String Prix, String Image, String Description) {
+        this.Date_Event = Date_Event;
+        this.Titre = Titre;
+        this.Prix = Prix;
+        this.Image = Image;
+        this.Description = Description;
+    }
+
+ 
 
     public Event() {
     }
 
-    public Event(int Event_Id, Date Date_Event, String Titre, Double Prix, String Image, String Description) {
-        this.Event_Id = Event_Id;
-        this.Date_Event = Date_Event;
-        this.Titre = Titre;
-        this.Prix = Prix;
-        this.Image = Image;
-        this.Description = Description;
-    }
-
-    public Event(Date Date_Event, String Titre, Double Prix, String Image, String Description) {
-        this.Date_Event = Date_Event;
-        this.Titre = Titre;
-        this.Prix = Prix;
-        this.Image = Image;
-        this.Description = Description;
-    }
-
-    public Event(int Event_Id, Date Date_Event, String Titre, Double Prix, String Image, String Description, int Fk_Reserv) {
-        this.Event_Id = Event_Id;
-        this.Date_Event = Date_Event;
-        this.Titre = Titre;
-        this.Prix = Prix;
-        this.Image = Image;
-        this.Description = Description;
-        this.Fk_Reserv = Fk_Reserv;
-    }
+  
+    
 
     public int getEvent_Id() {
         return Event_Id;
@@ -74,11 +85,11 @@ import java.sql.Date;
         this.Titre = Titre;
     }
 
-    public Double getPrix() {
+    public String getPrix() {
         return Prix;
     }
 
-    public void setPrix(Double Prix) {
+    public void setPrix(String Prix) {
         this.Prix = Prix;
     }
 
@@ -90,14 +101,7 @@ import java.sql.Date;
         this.Image = Image;
     }
 
-    public Event(Date Date_Event, String Titre, Double Prix, String Image, String Description, int Fk_Reserv) {
-        this.Date_Event = Date_Event;
-        this.Titre = Titre;
-        this.Prix = Prix;
-        this.Image = Image;
-        this.Description = Description;
-        this.Fk_Reserv = Fk_Reserv;
-    }
+  
 
     public String getDescription() {
         return Description;
@@ -107,17 +111,83 @@ import java.sql.Date;
         this.Description = Description;
     }
 
-    public int getFk_Reserv() {
-        return Fk_Reserv;
-    }
-
-    public void setFk_Reserv(int Fk_Reserv) {
-        this.Fk_Reserv = Fk_Reserv;
-    }
+   
 
     @Override
     public String toString() {
-        return "Event{" + "Event_Id=" + Event_Id + ", Date_Event=" + Date_Event + ", Titre=" + Titre + ", Prix=" + Prix + ", Image=" + Image + ", Description=" + Description + ", Fk_Reserv=" + Fk_Reserv + '}';
+        return "Event{" + "Event_Id=" + Event_Id + ", Date_Event=" + Date_Event + ", Titre=" + Titre + ", Prix=" + Prix + ", Image=" + Image + ", Description=" + Description + '}';
+    }
+
+    public void setNom_Event(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getNom_Event() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setNom_Organisateur(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getNom_Organisateur() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setPrenom_Organisateur(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getPrenom_Organisateur() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRegion(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getRegion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTel_Portable(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getTel_Portable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTel_Fix(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getTel_Fix() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDate_Evenement(Date valueOf) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean getDate_Evenement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getDate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getid() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setId(int parseInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

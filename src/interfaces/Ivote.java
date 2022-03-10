@@ -6,6 +6,8 @@
 package interfaces;
 
 import java.util.List;
+import models.Commentaire;
+import models.Utilisateur;
 import models.Vote;
 
 /**
@@ -25,4 +27,6 @@ public interface Ivote {
     
     public List<Vote> TriVote();
     public List<Vote> SearchVote(int id_source);
+    public boolean checkVote (Utilisateur u, Commentaire c);
+    public Vote RetrieveVote(int id_source, int id_user);
 }

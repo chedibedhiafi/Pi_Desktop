@@ -16,6 +16,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import models.HistoriqueStock;
+import models.PointDeVente;
 import models.Produit;
 import models.Stock;
 import utils.MaConnexion;
@@ -127,7 +128,7 @@ public class ServiceStock implements Istock{
     public List<Stock> findProduit(Produit p, int quantite) {
         List<Stock> stocks = new ArrayList<Stock>();
 
-        String req="SELECT * FROM stock where id_produit = "+p.getId()+" AND quantite >= "+quantite+"";
+        String req="SELECT * FROM stock where id_produit = "+p.getId()+" AND quantite > "+quantite+"";
         Statement st = null;
         try {
             st = cnx.createStatement();
@@ -168,6 +169,30 @@ public class ServiceStock implements Istock{
 
 
         return newStock;
+
+    }
+
+    @Override
+    public List<Stock> findStockPointDeVente(PointDeVente pt) {
+        List<Stock> stocks = new ArrayList<Stock>();
+
+        String req="SELECT * FROM stock where id_pointdevente = "+pt.getReference()+"";
+        Statement st = null;
+        try {
+            st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            //SOB HEDHA FI HEDHA
+            while(rs.next()){
+                stocks.add(new Stock(interfaceProduits.retriveproduit(rs.getInt("id_produit")),interfacePointDeVente.retrievePointDeVente(rs.getInt("id_pointdevente")),rs.getInt("quantite")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return stocks;
 
     }
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="700.0" stylesheets="@../elements/css/mainStyle1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLLivraisonController">
+   <children>
+      <Label layoutX="239.0" layoutY="67.0" />
+      <Label layoutX="18.0" layoutY="75.0" stylesheets="@../elements/css/mainStyle1.css" text="ADRESSE DE LIVRAISON" textFill="#19bbe3">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
+      <Label layoutX="122.0" layoutY="110.0" text="Type" />
+      <Label layoutX="119.0" layoutY="146.0" prefHeight="17.0" prefWidth="74.0" text="Nom" />
+      <Label layoutX="120.0" layoutY="181.0" prefHeight="17.0" prefWidth="60.0" text="Prenom" />
+      <Label layoutX="120.0" layoutY="215.0" prefHeight="17.0" prefWidth="60.0" text="CIN" />
+      <Label layoutX="110.0" layoutY="247.0" prefHeight="17.0" prefWidth="111.0" text="Compagnie" />
+      <Label layoutX="27.0" layoutY="223.0" prefHeight="17.0" prefWidth="60.0" />
+      <Label layoutX="80.0" layoutY="276.0" prefHeight="17.0" prefWidth="119.0" text="Adresse de rue" />
+      <Label layoutX="110.0" layoutY="309.0" prefHeight="17.0" prefWidth="81.0" text="Ville" />
+      <Label layoutX="77.0" layoutY="340.0" prefHeight="17.0" prefWidth="111.0" text="Code postal" />
+      <Label layoutX="36.0" layoutY="378.0" prefHeight="17.0" prefWidth="167.0" text="Numero de telephone" />
+      <Label layoutX="84.0" layoutY="412.0" prefHeight="17.0" prefWidth="144.0" text="Commentaire" />
+      <TextField fx:id="nomTF" layoutX="208.0" layoutY="142.0" />
+      <TextField fx:id="prenomTF" layoutX="208.0" layoutY="177.0" />
+      <TextField fx:id="CinTF" layoutX="208.0" layoutY="211.0" />
+      <TextField fx:id="compagnieTF" layoutX="208.0" layoutY="243.0" />
+      <TextField fx:id="adresseTF" layoutX="208.0" layoutY="272.0" />
+      <TextField fx:id="villeTF" layoutX="208.0" layoutY="305.0" />
+      <TextField fx:id="codeTF" layoutX="208.0" layoutY="336.0" />
+      <TextField fx:id="numTF" layoutX="208.0" layoutY="374.0" />
+      <TextField fx:id="commTF" layoutX="208.0" layoutY="408.0" />
+      <Label layoutX="31.0" layoutY="463.0" text="METHODE DE LIVRAISON" textFill="#19bbe3">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="181.0" layoutY="420.0" prefHeight="24.0" prefWidth="111.0" />
+      <RadioButton fx:id="Livtf" layoutX="35.0" layoutY="480.0" mnemonicParsing="false" onAction="#adomicile" prefHeight="53.0" prefWidth="675.0" text="7DT         Livraison a domicile       Paiement a la livraison 0 frais a partir de 300dt d'achats" />
+      <RadioButton fx:id="enlignetf" layoutX="33.0" layoutY="533.0" mnemonicParsing="false" onAction="#enligne" prefHeight="20.0" prefWidth="549.0" text="0DT               Parking Drive                Paiement en ligne seulement" />
+      <Button fx:id="suiv" layoutX="495.0" layoutY="578.0" mnemonicParsing="false" onAction="#validerlivraison" prefHeight="45.0" prefWidth="119.0" stylesheets="@../elements/css/mainStyle.css" text="Suivant">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.46190476190476193" radius="0.5">
+               <stops>
+                  <Stop color="#142fb9" />
+                  <Stop color="#18bbe4" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill></Button>
+      <Button fx:id="retour" layoutX="27.0" layoutY="578.0" mnemonicParsing="false" onAction="#retour" prefHeight="45.0" prefWidth="81.0" stylesheets="@../elements/css/mainStyle.css" text="Retour">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.46190476190476193" radius="0.5">
+               <stops>
+                  <Stop color="#142fb9" />
+                  <Stop color="#18bbe4" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill></Button>
+      <ComboBox fx:id="typeTF" layoutX="208.0" layoutY="106.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import models.Utilisateur;
 
@@ -18,13 +20,19 @@ public interface Iutilisateur {
     //lister
     public List<Utilisateur> afficherUtilisateurs();
     
-    public boolean modifierUtilisateur(Utilisateur u);
+    public Utilisateur modifierUtilisateur(Utilisateur u);
     
     public boolean supprimerUtilisateur(Utilisateur u);
     
     public Utilisateur login(Utilisateur u);
     
     public Utilisateur retrieveUtilisateur(int id);
+    
+    public boolean modifierMdpParMail(Utilisateur u);
+    
+    public boolean modifierMdp(Utilisateur u);
+    
+    public boolean banUser(LocalDate unlock_date,int id);
     
     
 }
