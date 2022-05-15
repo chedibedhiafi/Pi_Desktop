@@ -88,6 +88,7 @@ public class BlogController implements Initializable {
         root = loader.load();
         GestionCommentaireController commentairecontroller = loader.getController();
         System.out.println(idBlog);
+        System.out.println(u);
         commentairecontroller.idBlog(idBlog);
         commentairecontroller.loadComments(u);
         

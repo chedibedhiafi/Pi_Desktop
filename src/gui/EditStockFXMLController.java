@@ -179,18 +179,7 @@ public class EditStockFXMLController implements Initializable {
 
     @FXML
     private void onGP_Clicked(MouseEvent event) {
-        Node source = (Node)event.getTarget() ;
-        Stock targetPoint = new Stock();
-        if(source.getParent().getParent() instanceof AnchorPane)
-            targetPoint = getDataFromScene(source.getParent().getParent());
-        else
-            targetPoint = getDataFromScene(source.getParent());
-        this.stock = interfaceStock.retrieveStock(targetPoint);
-        loadListView(this.stock);
-    }
-    private Stock getDataFromScene(Parent scene){
-        Label idLBL = (Label) scene.lookup("#idLBL");
-        return new Stock(interfaceProduits.retriveproduit(Integer.parseInt(idLBL.getText())), this.point);
+        
     }
 
     @FXML

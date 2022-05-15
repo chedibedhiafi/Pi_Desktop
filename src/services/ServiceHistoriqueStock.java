@@ -179,7 +179,7 @@ public class ServiceHistoriqueStock implements IhistoriqueStock{
             e.printStackTrace();
         }
         
-        Collections.sort(historiquestocks, (HistoriqueStock o1, HistoriqueStock o2) -> ((int) (o2.getStock().getProduit().getPrix()*0.3)*(-o2.getQuantite())) - ((int) (o1.getStock().getProduit().getPrix()*0.3)*(-o1.getQuantite())));
+        Collections.sort(historiquestocks, (HistoriqueStock o1, HistoriqueStock o2) -> ((int) (o2.getStock().getProduit().getPrix()*o2.getStock().getProduit().getProfit())*(-o2.getQuantite())) - ((int) (o1.getStock().getProduit().getPrix()*o1.getStock().getProduit().getProfit())*(-o1.getQuantite())));
         
         for (HistoriqueStock hist : historiquestocks){
             list.add(hist.getStock().getProduit());

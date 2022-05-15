@@ -3,46 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionCatégorieFrontFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Icatégorie.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Iproduits.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ajouterProduit.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/MainInterfaceFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AffichagedeCatégorieController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AjouterReservationController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/SignInFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AjoutCommentaireController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceReservation.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/MainInterfaceBackFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ModifierCategorieController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionCatégorieFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/UnEventController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionEventsController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceHistoriqueStock.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/CommentaireController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionProduitFrontFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/Event.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/NewFXMain.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionProduitFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCommentaire.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/RateController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceEvent.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/modifierProduitController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/models/InputValidation.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionBlogFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionBlogFrontFXMLController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/BlogController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceProduit.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/UnEventUtilisateurController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/GestionCommentaireController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/EventsUtilisateursController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/interfaces/Icommentaire.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceEmploye.java</file>
             <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCatégorie.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServicePromotion.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AfficherListReservationController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/AffichagedeProduitController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/BlogFrontController.java</file>
-            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/MainInterfaceCatégorieFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceHistoriqueStock.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceLivraison.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/ForgotpwdFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/gui/SignInFXMLController.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCommentaire.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceProduit.java</file>
+            <file>file:/C:/Users/21694/Documents/NetBeansProjects/Quantech/src/services/ServiceCommande.java</file>
         </group>
     </open-files>
 </project-private>

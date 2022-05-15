@@ -32,7 +32,6 @@ public interface Iutilisateur {
     
     public boolean modifierMdp(Utilisateur u);
     
-    public boolean banUser(LocalDate unlock_date,int id);
-    
+    public boolean banUser(LocalDate unlock_date,int id);    
     
 }

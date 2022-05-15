@@ -91,6 +91,9 @@ public class CommentaireController implements Initializable {
         this.idComment.setText(String.valueOf(c.getId()));
         
         this.u = u;
+        
+        Utilisateur u1 = this.c.getId_user();
+        this.user_name.setText(u1.getNom() + " " +u1.getPrenom());
         System.out.println(u);
         
         

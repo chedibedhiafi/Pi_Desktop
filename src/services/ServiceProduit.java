@@ -28,7 +28,7 @@ public class ServiceProduit implements Iproduits{
 
     @Override
     public boolean ajouterProduit(Produit p) {
-            String request = "INSERT INTO `produits`(`id_catégorie`, `id_promotion`,`nom`, `prix`, `image`, `description`, `profit`) VALUES ("+p.getCatégorie().getId()+","+p.getPromotion().getId()+",'"+p.getNom()+"',"+p.getPrix()+",'"+p.getImage()+"','"+p.getDescription()+"',"+p.getProfit()+")";
+            String request = "INSERT INTO `produits`(`id_categorie`, `id_promotion`,`nom`, `prix`, `image`, `description`, `profit`) VALUES ("+p.getCatégorie().getId()+","+p.getPromotion().getId()+",'"+p.getNom()+"',"+p.getPrix()+",'"+p.getImage()+"','"+p.getDescription()+"',"+p.getProfit()+")";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -54,7 +54,7 @@ public class ServiceProduit implements Iproduits{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
+                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_categorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
             }
 
         } catch (SQLException e) {
@@ -68,7 +68,7 @@ public class ServiceProduit implements Iproduits{
 
     @Override
     public boolean modifierProduit(Produit p) {
-       String req = "UPDATE `produits` SET `nom`='"+p.getNom()+"',`prix`="+p.getPrix()+",`image`='"+p.getImage()+"' ,`id_catégorie`="+p.getCatégorie().getId()+",`id_promotion`="+p.getPromotion().getId()+",`description`='"+p.getDescription()+"',`profit`="+p.getProfit()+" WHERE id = "+p.getId()+" ";
+       String req = "UPDATE `produits` SET `nom`='"+p.getNom()+"',`prix`="+p.getPrix()+",`image`='"+p.getImage()+"' ,`id_categorie`="+p.getCatégorie().getId()+",`id_promotion`="+p.getPromotion().getId()+",`description`='"+p.getDescription()+"',`profit`="+p.getProfit()+" WHERE id = "+p.getId()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -107,7 +107,7 @@ public class ServiceProduit implements Iproduits{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
+                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_categorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
             }
 
         } catch (SQLException e) {
@@ -129,7 +129,7 @@ public class ServiceProduit implements Iproduits{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
+                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_categorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
             }
 
         } catch (SQLException e) {
@@ -152,7 +152,7 @@ public class ServiceProduit implements Iproduits{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
+                produits.add(new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_categorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit")));
             }
 
         } catch (SQLException e) {
@@ -174,7 +174,7 @@ public class ServiceProduit implements Iproduits{
             ResultSet rs = st.executeQuery(req);
 
             while(rs.next()){
-                produit=new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit"));
+                produit=new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_categorie")),servicePromotion.retrivepromotion(rs.getInt("id_promotion")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"),rs.getInt("profit"));
             }
 
         } catch (SQLException e) {
@@ -235,7 +235,7 @@ public class ServiceProduit implements Iproduits{
 
             //SOB HEDHA FI HEDHA
             while(rs.next()){
-                produit=new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_catégorie")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"));
+                produit=new Produit(rs.getInt("id"),serviceCatégorie.retrivecatégorie(rs.getInt("id_categorie")),rs.getString("nom"),rs.getInt("prix"),rs.getString("image"),rs.getString("description"));
                 ServiceProduitCommande serc=new ServiceProduitCommande();
                 produit.setQuantite(serc.getQuantity(produit.getId()));
                 produit.setTotal(produit.getPrix()*produit.getQuantite());

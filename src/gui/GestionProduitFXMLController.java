@@ -106,30 +106,20 @@ public class GestionProduitFXMLController implements Initializable {
 
     }
 
-   
-
-   
 
     @FXML
     private void SwitchToCatégorie(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("gestionCatégorieFXML.fxml"));
         ((BorderPane)ptGP.getParent().getParent()).setLeft(null);
-         ((BorderPane)ptGP.getParent().getParent()).setCenter(root);
+         ((BorderPane)ptGP.getParent().getParent().getParent().getParent().getParent()).setCenter(root);
     }
 
-
-
- 
-
-   
-
-  
 
     @FXML
     private void switchToAjouter(ActionEvent event) throws IOException {
            root = FXMLLoader.load(getClass().getResource("AjoutproduitFXML.fxml"));
-            ((BorderPane)ptGP.getParent().getParent()).setCenter(root);
+            ((BorderPane)ptGP.getParent().getParent().getParent().getParent().getParent()).setCenter(root);
     }
 
   

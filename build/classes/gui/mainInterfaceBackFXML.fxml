@@ -66,6 +66,11 @@
                      <children>
                         <MenuBar fx:id="categorieMB" prefHeight="50.0" prefWidth="1200.0" style="-fx-border-color: #6c8ba0;" styleClass="underlinedLabel">
                           <menus>
+                              <Menu mnemonicParsing="false" text="Acceuil">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#onAcceuilClicked" text="Acceuil" />
+                                </items>
+                              </Menu>
                             <Menu fx:id="userM" mnemonicParsing="false" text="Utilisateurs">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#clientsClicked" text="Clients" />

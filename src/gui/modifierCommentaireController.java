@@ -81,7 +81,7 @@ public class modifierCommentaireController implements Initializable {
     }
     @FXML
     private void updateComment(ActionEvent event) throws IOException {
-        Commentaire c1 = new Commentaire(Integer.parseInt(this.idLBL.getText()), newCommentaireContenuTF.getText(),java.sql.Date.valueOf(LocalDate.now()), sb.RetrieveBlog(Integer.parseInt(this.idBlog.getText())), su.retrieveUtilisateur(5));
+        Commentaire c1 = new Commentaire(Integer.parseInt(this.idLBL.getText()), newCommentaireContenuTF.getText(),java.sql.Date.valueOf(LocalDate.now()), sb.RetrieveBlog(Integer.parseInt(this.idBlog.getText())), this.u );
         
         System.out.println(c1);
         sc.modifierCommentaire(c1);

@@ -160,6 +160,8 @@ public class MainInterfaceBackFXMLController implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("gestionBlogFXML.fxml"));
             root = loader.load();
+            GestionBlogFXMLController gc = loader.getController();
+            gc.afficherBlog(e);
            borderpane.setCenter(root);
     }
 
@@ -183,6 +185,14 @@ public class MainInterfaceBackFXMLController implements Initializable {
     private void fnLivr(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("FXMLHistoriqueLivraison.fxml"));
+            root = loader.load();
+           borderpane.setCenter(root);
+    }
+
+    @FXML
+    private void onAcceuilClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Acceuil.fxml"));
             root = loader.load();
            borderpane.setCenter(root);
     }

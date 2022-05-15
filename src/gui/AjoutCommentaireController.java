@@ -94,10 +94,10 @@ public class AjoutCommentaireController implements Initializable {
         System.out.println(c);
         sc.ajouterCommentaire(c);
         
-        root = FXMLLoader.load(getClass().getResource("mainInterfaceFXML.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+//        root = FXMLLoader.load(getClass().getResource("mainInterfaceFXML.fxml"));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root);
+//        stage.setScene(scene);
     }
 
     @FXML

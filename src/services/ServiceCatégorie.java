@@ -27,7 +27,7 @@ public class ServiceCatégorie implements Icatégorie{
 
     @Override
     public boolean ajouterCatégorie(Catégorie c) {
-        String request = "INSERT INTO `catégorie`(`nom`) VALUES ('"+c.getNom()+"')";
+        String request = "INSERT INTO `categorie`(`nom`) VALUES ('"+c.getNom()+"')";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(request) == 1)
@@ -44,7 +44,7 @@ public class ServiceCatégorie implements Icatégorie{
     @Override
     public List<Catégorie> afficherCatégorie() {
          List<Catégorie> catégories = new ArrayList<Catégorie>();
-                   String req="SELECT * FROM catégorie";
+                   String req="SELECT * FROM categorie";
         Statement st = null;
         try {
             st = cnx.createStatement();
@@ -66,7 +66,7 @@ public class ServiceCatégorie implements Icatégorie{
 
     @Override
     public boolean modifierCatégorie(Catégorie c) {
-         String req = "UPDATE `catégorie` SET `nom`='"+c.getNom()+"' WHERE id = "+c.getId()+" ";
+         String req = "UPDATE `categorie` SET `nom`='"+c.getNom()+"' WHERE id = "+c.getId()+" ";
         try {
             Statement st = cnx.createStatement();
             if (st.executeUpdate(req) == 1)
@@ -80,7 +80,7 @@ public class ServiceCatégorie implements Icatégorie{
 
     @Override
     public boolean supprimerCatégorie(Catégorie c) {
-               String req = "DELETE FROM `catégorie` WHERE id = "+c.getId()+" ";
+               String req = "DELETE FROM `categorie` WHERE id = "+c.getId()+" ";
 
         try {
             Statement st = cnx.createStatement();
@@ -96,7 +96,7 @@ public class ServiceCatégorie implements Icatégorie{
     @Override
     public List<Catégorie> rechercheCatégorie(String nom) {
          List<Catégorie> catégories = new ArrayList<Catégorie>();
-                   String req="SELECT * FROM catégorie WHERE nom = '"+nom+"' ";
+                   String req="SELECT * FROM categorie WHERE nom = '"+nom+"' ";
         Statement st = null;
         try {
             st = cnx.createStatement();
@@ -119,7 +119,7 @@ public class ServiceCatégorie implements Icatégorie{
     @Override
     public Catégorie retrivecatégorie(int id) {
         Catégorie catégorie = null;
-                   String req="SELECT * FROM catégorie WHERE id="+id+" ";
+                   String req="SELECT * FROM categorie WHERE id="+id+" ";
         Statement st = null;
         try {
             st = cnx.createStatement();
@@ -144,7 +144,7 @@ public class ServiceCatégorie implements Icatégorie{
     @Override
     public Catégorie retrieveCategorieByNom(String s) {
            Catégorie cat = new Catégorie();
-        String query = "SELECT * FROM catégorie WHERE nom = '" + s + "' ";
+        String query = "SELECT * FROM categorie WHERE nom = '" + s + "' ";
         try {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(query);

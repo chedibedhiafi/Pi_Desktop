@@ -80,7 +80,7 @@ public class AjoutBlogController implements Initializable {
         //sb.ajouterBlog(new Blog(BlogTitreTF.getText(),BlogSujetTF.getText(),BlogContenuTF.getText(),java.sql.Date.valueOf(datePicker.getValue())));
         sb.ajouterBlog(new Blog(BlogTitreTF.getText(),BlogSujetTF.getText(),BlogContenuTF.getText(),java.sql.Date.valueOf(LocalDate.now())));
         
-        root = FXMLLoader.load(getClass().getResource("mainInterfaceFXML.fxml"));
+        root = FXMLLoader.load(getClass().getResource("mainInterfaceBackFXML.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -89,7 +89,7 @@ public class AjoutBlogController implements Initializable {
 
     @FXML
     private void SwitchToGestionBlog(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("mainInterfaceFXML.fxml"));
+        root = FXMLLoader.load(getClass().getResource("mainInterfaceBackFXML.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

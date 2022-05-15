@@ -157,7 +157,7 @@ public class FXMLPaiementController implements Initializable {
      
        
         Parent etab = FXMLLoader.load(getClass().getResource("FXMLCarte.fxml"));      
-        ((BorderPane)lbtotal.getParent().getParent()).setCenter(etab);
+        ((BorderPane)lbtotal.getParent().getParent().getParent()).setCenter(etab);
     }
     
     

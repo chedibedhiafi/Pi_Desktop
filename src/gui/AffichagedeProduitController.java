@@ -107,7 +107,7 @@ public class AffichagedeProduitController implements Initializable {
         modifierProduitController modifierproduitcontroller = loader.getController();
         modifierproduitcontroller.idproduit(idproduit);
         // root = FXMLLoader.load(getClass().getResource("ModifierProduit.fxml"));
-        ((BorderPane)image.getParent().getParent().getParent().getParent().getParent()).setCenter(root);
+        ((BorderPane)image.getParent().getParent().getParent().getParent().getParent().getParent().getParent().getParent()).setCenter(root);
         
     }
 

@@ -52,7 +52,12 @@ public class GestionBlogFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.u = u;
+        
+    } 
+    
+    public void afficherBlog(Utilisateur u)
+{
+    this.u = u;
         int column = 0;
         int row = 0;
         
@@ -65,6 +70,7 @@ public class GestionBlogFXMLController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
             
             BlogController BlogController = fxmlLoader.getController();
+                System.out.println(u);
             BlogController.setData(b, u);
             
             ptGP.add(anchorPane,column,row++);
@@ -73,7 +79,7 @@ public class GestionBlogFXMLController implements Initializable {
             }
             
         }
-    }    
+}
 
     @FXML
     private void SwitchToAjouterBlog(ActionEvent event) throws IOException {

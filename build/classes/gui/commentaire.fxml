@@ -15,11 +15,11 @@
             <Label fx:id="idBlog" text="id" visible="false" />
             <VBox prefHeight="17.0" prefWidth="440.0">
                <children>
-                  <Label fx:id="titreBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="296.0" text="Somme des votes" />
+                  <Label fx:id="titreBlog" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="296.0" text="Somme des votes" visible="false" />
                   <Label fx:id="user_name" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="Nom utilisateur" />
                   <Label fx:id="dateComment" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="488.0" text="Date du commentaire" />
                   <Label fx:id="contenuComment" alignment="TOP_LEFT" layoutX="10.0" layoutY="44.0" prefHeight="21.0" prefWidth="488.0" text="Contenu" />
-                  <Label fx:id="idUser" text="idUser" />
+                  <Label fx:id="idUser" text="idUser" visible="false" />
                   <Label fx:id="idLBL" text="id" visible="false" />
                   <Button fx:id="upvoteButton" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#upvote_onClick" prefHeight="25.0" prefWidth="71.0" text="Upvote" textAlignment="CENTER" />
                   <Button fx:id="updateVoteButton" layoutX="10.0" layoutY="120.0" mnemonicParsing="false" onAction="#updateVote_onClick" text="Supprimer Vote" textAlignment="CENTER" />
